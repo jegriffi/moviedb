@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 /**
  *
- * @author James Griffin And Johnathan Nguyen
+ * @author James Griffin And Jonathan Nguyen
  */
 public class JavaToSQL {
     
