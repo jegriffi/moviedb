@@ -27,7 +27,7 @@ public class metadata {
 		ResultSet rs = dbmd.getColumns(null,null,table,null);
 		
 		while(rs.next())
-			System.out.println(rs.getString(4) + " -- " + rs.getString(7));
+			System.out.println(rs.getString(4) + " -- " + rs.getString(6) + "(" + rs.getString(7) + ")");
 		
 		rs.close();
 	}
