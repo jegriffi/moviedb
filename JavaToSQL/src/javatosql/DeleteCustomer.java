@@ -30,8 +30,8 @@ public class DeleteCustomer {
 					   "WHERE first = '" + first + "' AND " +
 					   "last = '" + last + "'";
 		System.out.println(query);
-		
-//		select.executeUpdate(query);
+		int count = select.executeUpdate(query);
+		System.out.println("Deleted " + count + " rows");
 		select.close();
 		connection.close();
 	}

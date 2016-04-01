@@ -88,12 +88,12 @@ CREATE TABLE `moviedb`.`sales` (
   `sale` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `sales_cust`
-    FOREIGN KEY (`id`)
+    FOREIGN KEY (`customers`)
     REFERENCES `moviedb`.`customers` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `sales_movie`
-    FOREIGN KEY (`id`)
+    FOREIGN KEY (`movie`)
     REFERENCES `moviedb`.`movies` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE CASCADE);
