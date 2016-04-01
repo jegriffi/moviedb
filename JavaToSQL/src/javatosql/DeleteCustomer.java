@@ -8,13 +8,22 @@ public class DeleteCustomer {
 	private static final String pwd = "limeaide";
 	private static final String db = "moviedb";
 	
+	
 	public static void main(String[] args) throws Exception{
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
         Connection connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pwd);
-        
         Statement select = connection.createStatement();
         
-        String name[] = null;
+        String query = getQuery();
+        
+		int count = select.executeUpdate(query);
+		System.out.println("Deleted " + count + " rows");
+		select.close();
+		connection.close();
+	}
+
+	private static String getQuery() {
+		String name[] = null;
         String input = null;
         do{
         	Scanner in = new Scanner(System.in);
@@ -30,10 +39,7 @@ public class DeleteCustomer {
 					   "WHERE first = '" + first + "' AND " +
 					   "last = '" + last + "'";
 		System.out.println(query);
-		int count = select.executeUpdate(query);
-		System.out.println("Deleted " + count + " rows");
-		select.close();
-		connection.close();
+		return query;
 	}
 
 }
