@@ -1,0 +1,52 @@
+/* LINUX */
+// create database and tables
+mysql -h localhost -u root -p < createtable.sql
+
+// populate tables
+mysql -h localhost -u root -p moviedb < data.sql
+/* END LINUX */
+
+/* Windows.... I'm looking at you James
+1. open mysql command line
+2. login to the server
+3. the rest is in mysql like:
+mysql > "enter input here"
+*/
+
+// creates database and table
+mysql > source C:\absolute\path\to\createtable.sql
+mysql > use moviedb
+// populates table with data
+mysql > C:\abs\path\to\data.sql
+
+/* END WINDOWS */
+
+
+
+
+
+
+ssh -i some.pem user@ip.com
+
+mysql -u root -p pwd -db moviedb
+// opens mysql
+
+show databases; // show databases
+
+create database moviedb; // create databases
+
+show databases;
+
+use moviedb
+
+describe servers; // duh
+
+/* IN UNIX JDBC Example */
+cd jdbc-example
+ls // output ==> bin lib src
+
+
+
+select m.*
+from stars as s, movies as m, stars_in_movies as sm
+where s.first = 'Ben' and s.last = 'Stiller' and s.id=sm.star_id and sm.movie_id=m.id

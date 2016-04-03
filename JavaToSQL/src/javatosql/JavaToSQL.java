@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 import java.util.*;
 /**
  *
- * @author James Griffin And Johnathan Nguyen
+ * @author James Griffin And Jonathan Nguyen
  */
 public class JavaToSQL {
     
