@@ -16,7 +16,7 @@ CREATE TABLE `moviedb`.`stars`
   `id` INT NOT NULL AUTO_INCREMENT,
   `first` VARCHAR(50) NOT NULL DEFAULT '',
   `last` VARCHAR(50) NOT NULL DEFAULT '',
-  `dob` DATETIME NULL,
+  `dob` DATE NULL,
   `photo` VARCHAR(200) NULL DEFAULT '',
   PRIMARY KEY (`id`)
 );
@@ -62,7 +62,7 @@ CREATE TABLE `moviedb`.`creditcards` (
   `id` VARCHAR(20) NOT NULL ,
   `first` VARCHAR(50) NOT NULL DEFAULT '',
   `last` VARCHAR(50) NOT NULL DEFAULT '',
-  `expiration` DATETIME NOT NULL ,
+  `expiration` DATE NOT NULL ,
   PRIMARY KEY (`id`));
 
 CREATE TABLE `moviedb`.`customers` (
@@ -85,7 +85,7 @@ CREATE TABLE `moviedb`.`sales` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `customers` INT NOT NULL,
   `movie` INT NOT NULL,
-  `sale` DATETIME NOT NULL,
+  `sale` DATE NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `sales_cust`
     FOREIGN KEY (`customers`)
