@@ -3,6 +3,9 @@
 # NetBeans specific #
 nbproject/private/
 build/
+nbproject/
+build.xml
+manifest.mf
 nbbuild/
 dist/
 nbdist/
@@ -67,3 +70,4 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+/JavaToSQL/nbproject/private/

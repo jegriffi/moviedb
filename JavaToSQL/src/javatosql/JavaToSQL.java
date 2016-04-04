@@ -63,8 +63,7 @@ public class JavaToSQL {
         System.out.println("5.) Metadata");
         System.out.println("6.) Exit the menu");
         System.out.println("7.) Exit Program");
-        System.out.println("8.) Return to login screen");
-        System.out.println("9.) Return to login screen");
+        System.out.println("8.) Enter SQL command");
         System.out.print("\nEnter option: ");
     }
     private static void runConsole() throws Exception {
@@ -80,7 +79,7 @@ public class JavaToSQL {
                 InsertStar.insertStar(db, user, pass);
                 break;
             case 3:
-                insertCustomer(in);
+                //userinsertCustomer(in);
                 break;
             case 4:
                 DeleteCustomer.deleteCustomer(db, user, pass);
@@ -96,7 +95,7 @@ public class JavaToSQL {
                 break;
             case 8:
             	SQL.query(db, user, pass);
-            case 9:
+                break;
             default:
                 programFlow();
                 break;
@@ -108,10 +107,7 @@ public class JavaToSQL {
         ResultSet rs = null;
         try {
             Class.forName(JDBC_DRIVER).newInstance();
-            conn = DriverManager.getConnection(DB_URL, user, pass);
-            
-            //USE PreparedStatement ?????
-            
+            conn = DriverManager.getConnection(DB_URL, user, pass);            
             stmt = conn.createStatement();
             String sql = "SELECT * from " + table + " WHERE first = '" + first 
                 + "' AND last = '" + last + "';";
@@ -134,18 +130,16 @@ public class JavaToSQL {
         return false;        
     } 
     
-    private static void select(String first, String last) {
+    private static void selectByName(String first, String last) {
     Connection conn = null;
     Statement stmt = null;
     ResultSet rs = null;
     try {
-        Class.forName(JDBC_DRIVER);
-    	//Class.forName("com.mysql.jdbc.Driver").newInstance();
+        Class.forName(JDBC_DRIVER).newInstance();
         conn = DriverManager.getConnection(DB_URL, user, pass);
-        //Connection connection = DriverManager.getConnection("jdbc:mysql:///"+,user, pwd);
         stmt = conn.createStatement();
         String sql = "select m.* from stars as s, movies as m, stars_in_movies as sm "
-                + "where s.first = '" + first + "' and s.last = '" + last + "' and s.id=sm.star_id and sm.movie_id=m.id";
+                + "where s.first like '%" + first + "%' and s.last like '%" + last + "%' and s.id=sm.star_id and sm.movie_id=m.id";
         System.err.println(sql);
         rs = stmt.executeQuery(sql);
 
@@ -167,110 +161,51 @@ public class JavaToSQL {
             e.printStackTrace();
         }        
     }
+    
+    private static void selectById(String id) {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            Class.forName(JDBC_DRIVER).newInstance();
+            conn = DriverManager.getConnection(DB_URL, user, pass);
+            stmt = conn.createStatement();
+            String sql = "select m.* from stars as s, movies as m, stars_in_movies as sm "
+                + "where s.id = " + id + " and s.id=sm.star_id and sm.movie_id=m.id";
+            System.err.println(sql);
+            rs = stmt.executeQuery(sql);
+            
+            while(rs.next()) {
+                List<String> data = new ArrayList<>();
+                data.add(rs.getString("id"));
+                data.add(rs.getString("title"));
+                data.add(rs.getString("year"));
+                data.add(rs.getString("director"));
+                data.add(rs.getString("banner"));
+                data.add(rs.getString("trailer"));
+
+                System.out.println(data);
+            }
+        rs.close();
+        stmt.close();
+        conn.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     private static void printOutMoviesFeaturingStars(BufferedReader in) throws IOException {
-        String[] fullName = Helper.nameArr("star's", in);
-        select(fullName[0], fullName[1]);
-    }
-    
-    private static void insertStarSQL(String first, String last, String dob, String photo) {
-        Connection conn = null;
-        Statement stmt = null;
-        try {
-            Class.forName(JDBC_DRIVER);
-            conn = DriverManager.getConnection(DB_URL, user, pass);
-            stmt = conn.createStatement();
-            String sql = "INSERT INTO stars (first, last, dob, photo) VALUES (" 
-                    + first + ", " + last + ", " + dob + ", " 
-                    + photo + ");";
-            System.err.println(sql);
-            stmt.executeUpdate(sql);
-            
-            if (!checkIfInserted("star", first, last)) {
-                System.out.println("PROBLEM ENTERING STAR");            
-            }
-        
-        }catch (Exception e) {
-            e.printStackTrace();
+        String[] fullName;
+        System.out.print("Query star by name or id? (name/id): ");
+        String ans = in.readLine().trim();
+        if (ans.equals("name")) {
+            fullName = Helper.nameArr("star's", in);
+            selectByName(fullName[0], fullName[1]);
         }
-    }
-    
-    private static void insertStar(BufferedReader in) throws IOException {
-        String[] fullName = nameArr("star's", in);        
-        String lastName = fullName.length == 1 ? fullName[1] : fullName[0]; //if star only has last name
-        String firstName = fullName.length > 1 ? fullName[0] : "";
-        
-        System.out.print("\nEnter star's dob (optional): ");
-        String dob = in.readLine();
-        System.out.print("\nEnter star's photo url (optional): ");
-        String photo = in.readLine();
-        
-        insertStarSQL(firstName, lastName, dob, photo);
-    }
-    private static void insertCustomerSQL(String first, String last, String cc, String exp, String addr, 
-            String email, String password) {
-        Connection conn = null;
-        Statement stmt = null;
-        try {
-            Class.forName(JDBC_DRIVER);
-            conn = DriverManager.getConnection(DB_URL, user, pass);
-            stmt = conn.createStatement();
-            //credit card insert FIRST
-            String sql = "INSERT INTO creditcards (id, first, last, experation) VALUES (" + 
-                    cc + first + last + exp + ");"; 
-            stmt.executeUpdate(sql);
-            
-            stmt = conn.createStatement();
-            sql = "INSERT INTO customer (first, last, cc, address, email, password) VALUES (" 
-                    + first + last + cc + addr + email + password + ");";
-            stmt.executeUpdate(sql);
-            
-            if (!checkIfInserted("customer", first, last)) {
-                System.out.println("PROBLEM ENTERING CUSTOMER");
-            }
-            stmt.close();
-            conn.close();
-            
-        }catch (Exception e) {
-            e.printStackTrace();
+        else {
+            System.out.print("Enter star's ID: ");
+            ans = in.readLine().trim();
+            selectById(ans);
         }        
-    }
-    private static void insertCustomer(BufferedReader in) throws IOException {
-        String cardNumStr = "";
-        String[] fullName = nameArr("customer's", in);        
-        String lastName = fullName.length == 1 ? fullName[1] : fullName[0]; //if star only has last name
-        String firstName = fullName.length > 1 ? fullName[0] : "";
-        do {
-            //gets credit card
-            System.out.print("Enter credit card number: ");
-            cardNumStr = in.readLine();        
-            if (cardNumStr.equals(""))
-                System.out.println("Need credit card info to add Customer");
-        } while(cardNumStr.equals(""));
-        
-        System.out.print("\nEnter credit card expiration date: ");
-        String expDateStr = in.readLine();
-        System.out.print("\nEnter address: ");
-        String addr = in.readLine();
-        System.out.print("\nEnter email: ");
-        String email = in.readLine();
-        System.out.print("\nEnter password: ");
-        String pass = in.readLine();
-        
-        insertCustomerSQL(firstName, lastName, cardNumStr, expDateStr, addr, email, pass);        
-    }
-    
-    private static String[] nameArr(String tableOption, BufferedReader in) throws IOException {        
-        System.out.print("Enter "+ tableOption + " full name: ");
-        String name = in.readLine();
-        System.out.print("\n");
-        
-        String[] fullName = new String[5];
-        int pos = 0;
-        StringTokenizer tok = new StringTokenizer(name, " ");
-        while (tok.hasMoreTokens()) {
-            fullName[pos++] = tok.nextToken();
-        }
-        return fullName;        
     }
 }
