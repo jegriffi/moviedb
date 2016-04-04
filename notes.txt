@@ -49,4 +49,4 @@ ls // output ==> bin lib src
 
 select m.*
 from stars as s, movies as m, stars_in_movies as sm
-where s.first = 'Ben' and s.last = 'Stiller' and s.id=sm.star_id and sm.movie_id=m.id
+where s.first = 'Ben' and s.last = 'Stiller' and s.id=sm.star_id and sm.movie_id=m.idhi
