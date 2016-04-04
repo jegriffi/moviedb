@@ -35,12 +35,21 @@ public class JavaToSQL {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("User: ");
         String user = in.readLine();
-        System.out.print("Password: ");
+        System.out.print("\nPassword: ");
         String pass = in.readLine();
-        if (user.equals("user") && pass.equals("pass")) {
-            System.out.println("Login Successful...");
-            return true;        
+        if (user.equals("user")) {
+            if (pass.equals("pass")) {
+                System.out.println("Login Successful...");
+                return true;   
+            }
+            else {
+                System.out.println("Password incorrect");
+            }
         }
+        else {
+            System.out.println("Username does not exist");
+        }
+        
         return false;
     }
     private static void consolePrompt() {
@@ -89,10 +98,34 @@ public class JavaToSQL {
                 break;
         }
     }    
-    private static boolean checkIfInserted(String table, String first, String last) {
-        if (true) {
-            //do sql query to check that it is inserted
-            return true;
+    private static boolean checkIfInserted(String table, String first, String last) throws SQLException {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            Class.forName(JDBC_DRIVER).newInstance();
+            conn = DriverManager.getConnection(DB_URL, user, pass);
+            
+            //USE PreparedStatement ?????
+            
+            stmt = conn.createStatement();
+            String sql = "SELECT * from " + table + " WHERE first = '" + first 
+                + "' AND last = '" + last + "';";
+            rs = stmt.executeQuery(sql);
+            if (rs.absolute(1)) {
+                System.out.println(first + " " + last + " inserted into " + table);
+                conn.close();
+                stmt.close();
+                rs.close();
+                return true;
+            }
+            System.out.println("ERROR INSERTING " + first + " " + last + "...");
+            conn.close();
+            stmt.close();
+            rs.close();
+            
+        } catch(Exception e) {
+            e.printStackTrace();
         }
         return false;        
     } 
@@ -146,7 +179,7 @@ public class JavaToSQL {
             String sql = "INSERT INTO star (first, last, dob, photo) VALUES (" 
                     + first + ", " + last + ", " + dob + ", " 
                     + photo + ");";
-            stmt.executeQuery(sql);
+            stmt.executeUpdate(sql);
             
             if (!checkIfInserted("star", first, last)) {
                 System.out.println("PROBLEM ENTERING STAR");            
@@ -180,12 +213,12 @@ public class JavaToSQL {
             //credit card insert FIRST
             String sql = "INSERT INTO creditcards (id, first, last, experation) VALUES (" + 
                     cc + first + last + exp + ");"; 
-            stmt.executeQuery(sql);
+            stmt.executeUpdate(sql);
             
             stmt = conn.createStatement();
             sql = "INSERT INTO customer (first, last, cc, address, email, password) VALUES (" 
                     + first + last + cc + addr + email + password + ");";
-            stmt.executeQuery(sql);
+            stmt.executeUpdate(sql);
             
             if (!checkIfInserted("customer", first, last)) {
                 System.out.println("PROBLEM ENTERING CUSTOMER");
