@@ -3,7 +3,6 @@ import java.sql.*;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.sql.DriverManager;
 import java.util.StringTokenizer;
 import java.util.*;
 /**
@@ -13,22 +12,22 @@ import java.util.*;
 public class JavaToSQL {
     
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://moviedb"; 
+    static final String DB_URL = "jdbc:mysql:///moviedb"; 
     static final String user = "root";
     static final String pass = "limeaide";   
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         programFlow();
     }
     
-    private static void programFlow() throws IOException {
+    private static void programFlow() throws Exception {
         boolean key; 
         do {
             key = loginScreen();
         } while (!key);
 
-        consolePrompt();
         while(true) {
+            consolePrompt();
             runConsole();
         } 
     }
@@ -36,7 +35,7 @@ public class JavaToSQL {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("User: ");
         String user = in.readLine();
-        System.out.print("\nPassword: ");
+        System.out.print("Password: ");
         String pass = in.readLine();
         if (user.equals("user") && pass.equals("pass")) {
             System.out.println("Login Successful...");
@@ -54,9 +53,10 @@ public class JavaToSQL {
         System.out.println("5.) Metadata");
         System.out.println("6.) Exit the menu");
         System.out.println("7.) Exit Program");
+        System.out.println("8.) Return to login screen");
         System.out.print("\nEnter option: ");
     }
-    private static void runConsole() throws IOException {
+    private static void runConsole() throws Exception {
         BufferedReader in  = new BufferedReader(new InputStreamReader(System.in));        
         
         String text = in.readLine();
@@ -72,10 +72,10 @@ public class JavaToSQL {
                 insertCustomer(in);
                 break;
             case 4:
-                //Jonathan's DELETE FUNCTION
+                DeleteCustomer.deleteCustomer();
                 break;
             case 5: 
-                //Jonathan's metadata function
+                Metadata.getDatabaseMetaData();
                 break;
             case 6:
                 programFlow();
@@ -83,6 +83,7 @@ public class JavaToSQL {
             case 7:
                 System.exit(0);
                 break;
+            case 8:
             default:
                 programFlow();
                 break;
@@ -102,10 +103,13 @@ public class JavaToSQL {
     ResultSet rs = null;
     try {
         Class.forName(JDBC_DRIVER);
+    	//Class.forName("com.mysql.jdbc.Driver").newInstance();
         conn = DriverManager.getConnection(DB_URL, user, pass);
+        //Connection connection = DriverManager.getConnection("jdbc:mysql:///"+,user, pwd);
         stmt = conn.createStatement();
         String sql = "select m.* from stars as s, movies as m, stars_in_movies as sm "
-                + "where s.first = " + first + " and s.last = " + last + " and s.id=sm.star_id and sm.movie_id=m.id";
+                + "where s.first = '" + first + "' and s.last = '" + last + "' and s.id=sm.star_id and sm.movie_id=m.id";
+        System.err.println(sql);
         rs = stmt.executeQuery(sql);
 
         while(rs.next()) {
@@ -117,7 +121,7 @@ public class JavaToSQL {
             data.add(rs.getString("banner"));
             data.add(rs.getString("trailer"));
 
-            System.out.print(data);
+            System.out.println(data);
         }
         rs.close();
         stmt.close();

@@ -3,7 +3,7 @@ package javatosql;
 import java.sql.*;
 import java.util.*; 
 
-public class metadata {
+public class Metadata {
 	
 	private static final String user = "root";
 	private static final String pwd = "limeaide";

@@ -10,6 +10,11 @@ public class DeleteCustomer {
 	
 	
 	public static void main(String[] args) throws Exception{
+		deleteCustomer();
+	}
+
+	public static void deleteCustomer()
+			throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
         Connection connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pwd);
         Statement select = connection.createStatement();
