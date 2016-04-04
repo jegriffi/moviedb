@@ -13,8 +13,9 @@ public class JavaToSQL {
     
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql:///moviedb"; 
+    static final String db = "moviedb";
     static final String user = "root";
-    static final String pass = "limeaide";   
+    static final String pass = "pass";   
     
     public static void main(String[] args) throws Exception {
         programFlow();
@@ -35,7 +36,7 @@ public class JavaToSQL {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("User: ");
         String user = in.readLine();
-        System.out.print("\nPassword: ");
+        System.out.print("Password: ");
         String pass = in.readLine();
         if (user.equals("user")) {
             if (pass.equals("pass")) {
@@ -63,6 +64,7 @@ public class JavaToSQL {
         System.out.println("6.) Exit the menu");
         System.out.println("7.) Exit Program");
         System.out.println("8.) Return to login screen");
+        System.out.println("9.) Return to login screen");
         System.out.print("\nEnter option: ");
     }
     private static void runConsole() throws Exception {
@@ -75,16 +77,16 @@ public class JavaToSQL {
                 printOutMoviesFeaturingStars(in);
                 break;
             case 2:
-                insertStar(in);
+                InsertStar.insertStar(db, user, pass);
                 break;
             case 3:
                 insertCustomer(in);
                 break;
             case 4:
-                DeleteCustomer.deleteCustomer();
+                DeleteCustomer.deleteCustomer(db, user, pass);
                 break;
             case 5: 
-                Metadata.getDatabaseMetaData();
+                Metadata.getDatabaseMetaData(db, user, pass);
                 break;
             case 6:
                 programFlow();
@@ -93,6 +95,8 @@ public class JavaToSQL {
                 System.exit(0);
                 break;
             case 8:
+            	SQL.query(db, user, pass);
+            case 9:
             default:
                 programFlow();
                 break;
@@ -165,7 +169,7 @@ public class JavaToSQL {
     }
 
     private static void printOutMoviesFeaturingStars(BufferedReader in) throws IOException {
-        String[] fullName = nameArr("star's", in);
+        String[] fullName = Helper.nameArr("star's", in);
         select(fullName[0], fullName[1]);
     }
     
@@ -176,9 +180,10 @@ public class JavaToSQL {
             Class.forName(JDBC_DRIVER);
             conn = DriverManager.getConnection(DB_URL, user, pass);
             stmt = conn.createStatement();
-            String sql = "INSERT INTO star (first, last, dob, photo) VALUES (" 
+            String sql = "INSERT INTO stars (first, last, dob, photo) VALUES (" 
                     + first + ", " + last + ", " + dob + ", " 
                     + photo + ");";
+            System.err.println(sql);
             stmt.executeUpdate(sql);
             
             if (!checkIfInserted("star", first, last)) {

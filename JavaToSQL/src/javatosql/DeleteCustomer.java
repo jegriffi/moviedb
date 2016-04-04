@@ -4,17 +4,18 @@ import java.util.*;
 
 
 public class DeleteCustomer {
-	private static final String user = "root";
-	private static final String pwd = "limeaide";
-	private static final String db = "moviedb";
+
 	
 	
 	public static void main(String[] args) throws Exception{
-		deleteCustomer();
+		String db = "moviedb";
+		String user = "root";
+		String pass = "pass";
+		deleteCustomer(db, user, pass);
 	}
 
-	public static void deleteCustomer()
-			throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+	public static void deleteCustomer(String db, String user, String pwd)
+			throws Exception {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
         Connection connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pwd);
         Statement select = connection.createStatement();
@@ -28,17 +29,11 @@ public class DeleteCustomer {
 	}
 
 	private static String getQuery() {
-		String name[] = null;
-        String input = null;
-        do{
-        	Scanner in = new Scanner(System.in);
-        	System.out.print("Customer to delete: ");
-        	input = in.nextLine();
-        	name = input.split("\\s+");
-        } while(input.length() == 0);
+		Scanner in = new Scanner(System.in);
+		String name[] = Helper.nameArr("customer's", in);
 		
-		String first = name.length > 0 ? name[0] : "";
-		String last = name.length > 1  ? name[1] : "";
+		String first = name[0];
+		String last = name[1];
 		
 		String query = "DELETE FROM customers " +
 					   "WHERE first = '" + first + "' AND " +
