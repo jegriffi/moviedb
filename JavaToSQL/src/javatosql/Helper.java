@@ -59,5 +59,20 @@ public class Helper {
 		
 		return year + "-" + month + "-" + day;
 	}
+	
+	public static String prompt(String attr, Scanner in){
+		System.out.print("Enter " + attr + ": ");
+		String input = in.nextLine();
+		return input;
+	}
+	
+	public static String prompt(String attr, BufferedReader in) throws Exception{
+		System.out.print("Enter " + attr + ": ");
+		String input = in.readLine();
+		return input;
+	}
+	
+	
+	
 
 }

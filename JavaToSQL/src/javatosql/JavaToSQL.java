@@ -80,7 +80,7 @@ public class JavaToSQL {
                 InsertStar.insertStar(db, user, pass);
                 break;
             case 3:
-                insertCustomer(in);
+                InsertCustomer.insertCustomer(db, user, pass);
                 break;
             case 4:
                 DeleteCustomer.deleteCustomer(db, user, pass);
