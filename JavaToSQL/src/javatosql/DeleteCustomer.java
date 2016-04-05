@@ -4,10 +4,9 @@ import java.util.*;
 
 
 public class DeleteCustomer {
-
-	
 	
 	public static void main(String[] args) throws Exception{
+		Class.forName("com.mysql.jdbc.Driver");
 		String db = "moviedb";
 		String user = "root";
 		String pass = "pass";
@@ -16,7 +15,6 @@ public class DeleteCustomer {
 
 	public static void deleteCustomer(String db, String user, String pwd)
 			throws Exception {
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
         Connection connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pwd);
         Statement select = connection.createStatement();
         
@@ -30,10 +28,13 @@ public class DeleteCustomer {
 
 	private static String getQuery() {
 		Scanner in = new Scanner(System.in);
-		String name[] = Helper.nameArr("customer's", in);
 		
-		String first = name[0];
-		String last = name[1];
+    	String first = "";
+    	while(first == null || first.length() <= 0){
+    		first = Helper.prompt("first name: ", in);
+    	}
+    	
+    	String last = Helper.prompt("last name", in);
 		
 		String query = "DELETE FROM customers " +
 					   "WHERE first = '" + first + "' AND " +

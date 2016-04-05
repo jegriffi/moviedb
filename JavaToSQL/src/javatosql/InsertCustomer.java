@@ -32,15 +32,20 @@ public class InsertCustomer {
         insertCC(info, connection, select);
         insertCustomer(info, connection, select);
         
-        
+        select.close();
+        connection.close();
 	}
 	
 	private static List<String> customerInfo(){
 		List<String> info = new ArrayList<String>();
 		Scanner in = new Scanner(System.in);
-		String[] name = Helper.nameArr("customer's", in);
-		String first = name[0];
-		String last = name[1];
+
+    	String first = "";
+    	while(first == null || first.length() <= 0){
+    		first = Helper.prompt("first name: ", in);
+    	}
+    	
+    	String last = Helper.prompt("last name", in);
 		
 		String address = "";
 		while (address.length() <= 0){

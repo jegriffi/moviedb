@@ -3,7 +3,6 @@ import java.sql.*;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 import java.util.*;
 /**
  *
@@ -13,9 +12,9 @@ public class JavaToSQL {
     
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql:///moviedb"; 
-    static final String db = "moviedb";
-    static final String user = "root";
-    static final String pass = "pass";   
+    static  String db = "moviedb";
+    static  String user = "root";
+    static  String pass = "pass";   
     
     public static void main(String[] args) throws Exception {
         programFlow();
@@ -35,23 +34,35 @@ public class JavaToSQL {
     private static boolean loginScreen() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("User: ");
-        String user = in.readLine();
+        user = in.readLine();
         System.out.print("Password: ");
-        String pass = in.readLine();
-        if (user.equals("user")) {
-            if (pass.equals("pass")) {
-                System.out.println("Login Successful...");
-                return true;   
-            }
-            else {
-                System.out.println("Password incorrect");
-            }
-        }
-        else {
-            System.out.println("Username does not exist");
-        }
+        pass = in.readLine();
+        System.out.print("Database: ");
+        db = in.readLine();
+        Connection connection = null;
+        try{
+        	Class.forName("com.mysql.jdbc.Driver");
+        	connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pass);
+        	return true;
+        } catch (Exception e) {
+        	e.printStackTrace();
+        	return false;
+        } finally { try {connection.close(); } catch  (Exception e2) { e2.printStackTrace(); } }
         
-        return false;
+//        if (user.equals("user")) {
+//            if (pass.equals("pass")) {
+//                System.out.println("Login Successful...");
+//                return true;   
+//            }
+//            else {
+//                System.out.println("Password incorrect");
+//            }
+//        }
+//        else {
+//            System.out.println("Username does not exist");
+//        }
+        
+//        return false;
     }
     private static void consolePrompt() {
         System.out.println("\nMOVIE DATABASE");
@@ -120,13 +131,10 @@ public class JavaToSQL {
                 return true;
             }
             System.out.println("ERROR INSERTING " + first + " " + last + "...");
-            conn.close();
-            stmt.close();
-            rs.close();
             
         } catch(Exception e) {
             e.printStackTrace();
-        }
+        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { e2.printStackTrace(); } }
         return false;        
     } 
     
@@ -140,26 +148,42 @@ public class JavaToSQL {
         stmt = conn.createStatement();
         String sql = "select m.* from stars as s, movies as m, stars_in_movies as sm "
                 + "where s.first like '%" + first + "%' and s.last like '%" + last + "%' and s.id=sm.star_id and sm.movie_id=m.id";
-        System.err.println(sql);
-        rs = stmt.executeQuery(sql);
-
-        while(rs.next()) {
-            List<String> data = new ArrayList<>();
-            data.add(rs.getString("id"));
-            data.add(rs.getString("title"));
-            data.add(rs.getString("year"));
-            data.add(rs.getString("director"));
-            data.add(rs.getString("banner"));
-            data.add(rs.getString("trailer"));
-
-            System.out.println(data);
-        }
-        rs.close();
-        stmt.close();
-        conn.close();
+        
+		rs = stmt.executeQuery(sql);
+		ResultSetMetaData metadata = rs.getMetaData();
+		List<String> columnNames = new ArrayList<String>();
+		int i;
+		for(i = 1; i <= metadata.getColumnCount(); ++i){
+			columnNames.add(metadata.getColumnName(i));
+		}
+		
+		i = 0;
+		while(i++ < 25 && rs.next()){
+			int size = metadata.getColumnCount();
+			for(int k = 1; k <= size; ++k){
+				System.out.println(columnNames.get(k-1) + ": " + rs.getString(k));
+			}
+			System.out.println();
+		}
+        
+        
+//        System.err.println(sql);
+//        rs = stmt.executeQuery(sql);
+//
+//        while(rs.next()) {
+//            List<String> data = new ArrayList<>();
+//            data.add(rs.getString("id"));
+//            data.add(rs.getString("title"));
+//            data.add(rs.getString("year"));
+//            data.add(rs.getString("director"));
+//            data.add(rs.getString("banner"));
+//            data.add(rs.getString("trailer"));
+//
+//            System.out.println(data);
+//        }
         } catch (Exception e) {
             e.printStackTrace();
-        }        
+        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { e2.printStackTrace(); } }        
     }
     
     private static void selectById(String id) {
@@ -173,6 +197,25 @@ public class JavaToSQL {
             String sql = "select m.* from stars as s, movies as m, stars_in_movies as sm "
                 + "where s.id = " + id + " and s.id=sm.star_id and sm.movie_id=m.id";
             System.err.println(sql);
+            
+    		rs = stmt.executeQuery(sql);
+    		ResultSetMetaData metadata = rs.getMetaData();
+    		List<String> columnNames = new ArrayList<String>();
+    		int i;
+    		for(i = 1; i <= metadata.getColumnCount(); ++i){
+    			columnNames.add(metadata.getColumnName(i));
+    		}
+    		
+    		i = 0;
+    		while(i++ < 25 && rs.next()){
+    			int size = metadata.getColumnCount();
+    			for(int k = 1; k <= size; ++k){
+    				System.out.println(columnNames.get(k-1) + ": " + rs.getString(k));
+    			}
+    			System.out.println();
+    		}
+            
+            /*
             rs = stmt.executeQuery(sql);
             
             while(rs.next()) {
@@ -186,21 +229,19 @@ public class JavaToSQL {
 
                 System.out.println(data);
             }
-        rs.close();
-        stmt.close();
-        conn.close();
+            */
         }catch (Exception e) {
             e.printStackTrace();
-        }
+        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { e2.printStackTrace(); } }
     }
 
-    private static void printOutMoviesFeaturingStars(BufferedReader in) throws IOException {
-        String[] fullName;
+    private static void printOutMoviesFeaturingStars(BufferedReader in) throws Exception {
         System.out.print("Query star by name or id? (name/id): ");
         String ans = in.readLine().trim();
         if (ans.equals("name")) {
-            fullName = Helper.nameArr("star's", in);
-            selectByName(fullName[0], fullName[1]);
+        	String first = Helper.prompt("first name", in);
+        	String last = Helper.prompt("last name", in);
+            selectByName(first, last);
         }
         else {
             System.out.print("Enter star's ID: ");

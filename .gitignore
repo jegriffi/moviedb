@@ -73,3 +73,6 @@ local.properties
 # Code Recommenders
 .recommenders/
 /JavaToSQL/nbproject/private/
+
+*.ppk
+*.pem

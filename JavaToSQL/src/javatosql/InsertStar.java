@@ -46,9 +46,12 @@ public class InsertStar {
     	Scanner in = new Scanner(System.in);
     	String input = null;
     	
-    	String[] starName = Helper.nameArr("star's", in);
-    	String first = starName[0];
-    	String last = starName[1];
+    	//String[] starName = Helper.nameArr("star's", in);
+    	String first = Helper.prompt("first name (optional)", in);
+    	
+    	String last = "";
+    	while(last.equals(""))
+    		last = Helper.prompt("last name", in);
 		
     	String dob = "1-1-1";
 		System.out.print("Do you have the star's DOB? (y/n) ");
@@ -56,8 +59,7 @@ public class InsertStar {
 		if(input.equals("y")) 
 			dob = Helper.getDate(in);		
 		
-		System.out.print("Enter photo URL (optional) : ");
-		String photo = in.nextLine().split("\\s+")[0];
+		String photo = Helper.prompt("photo (optional)", in);
 		
 		starInfo.add(first);
 		starInfo.add(last);
