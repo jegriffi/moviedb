@@ -241,16 +241,20 @@ public class JavaToSQL {
 
     private static void printOutMoviesFeaturingStars(BufferedReader in) throws Exception {
         System.out.print("Query star by name or id? (name/id): ");
-        String ans = in.readLine().trim();
+        String ans = in.readLine().trim().toLowerCase();
+        System.out.println();
         if (ans.equals("name")) {
         	String first = Helper.prompt("first name", in);
         	String last = Helper.prompt("last name", in);
             selectByName(first, last);
         }
-        else {
+        else if (ans.equals("id")){
             System.out.print("Enter star's ID: ");
             ans = in.readLine().trim();
             selectById(ans);
-        }        
+        } else {
+        	System.out.println("Invalid input");
+        	printOutMoviesFeaturingStars(in);
+        }
     }
 }
