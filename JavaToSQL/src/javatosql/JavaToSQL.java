@@ -3,7 +3,6 @@ import java.sql.*;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 import java.util.*;
 /**
  *
@@ -149,20 +148,39 @@ public class JavaToSQL {
         stmt = conn.createStatement();
         String sql = "select m.* from stars as s, movies as m, stars_in_movies as sm "
                 + "where s.first like '%" + first + "%' and s.last like '%" + last + "%' and s.id=sm.star_id and sm.movie_id=m.id";
-        System.err.println(sql);
-        rs = stmt.executeQuery(sql);
-
-        while(rs.next()) {
-            List<String> data = new ArrayList<>();
-            data.add(rs.getString("id"));
-            data.add(rs.getString("title"));
-            data.add(rs.getString("year"));
-            data.add(rs.getString("director"));
-            data.add(rs.getString("banner"));
-            data.add(rs.getString("trailer"));
-
-            System.out.println(data);
-        }
+        
+		rs = stmt.executeQuery(sql);
+		ResultSetMetaData metadata = rs.getMetaData();
+		List<String> columnNames = new ArrayList<String>();
+		int i;
+		for(i = 1; i <= metadata.getColumnCount(); ++i){
+			columnNames.add(metadata.getColumnName(i));
+		}
+		
+		i = 0;
+		while(i++ < 25 && rs.next()){
+			int size = metadata.getColumnCount();
+			for(int k = 1; k <= size; ++k){
+				System.out.println(columnNames.get(k-1) + ": " + rs.getString(k));
+			}
+			System.out.println();
+		}
+        
+        
+//        System.err.println(sql);
+//        rs = stmt.executeQuery(sql);
+//
+//        while(rs.next()) {
+//            List<String> data = new ArrayList<>();
+//            data.add(rs.getString("id"));
+//            data.add(rs.getString("title"));
+//            data.add(rs.getString("year"));
+//            data.add(rs.getString("director"));
+//            data.add(rs.getString("banner"));
+//            data.add(rs.getString("trailer"));
+//
+//            System.out.println(data);
+//        }
         rs.close();
         stmt.close();
         conn.close();
