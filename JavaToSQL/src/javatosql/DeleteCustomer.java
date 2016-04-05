@@ -6,6 +6,7 @@ import java.util.*;
 public class DeleteCustomer {
 	
 	public static void main(String[] args) throws Exception{
+		Class.forName("com.mysql.jdbc.Driver");
 		String db = "moviedb";
 		String user = "root";
 		String pass = "pass";
@@ -14,7 +15,6 @@ public class DeleteCustomer {
 
 	public static void deleteCustomer(String db, String user, String pwd)
 			throws Exception {
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
         Connection connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pwd);
         Statement select = connection.createStatement();
         

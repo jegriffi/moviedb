@@ -27,6 +27,8 @@ public class SQL {
 		} else {
 			update(input, select);
 		}
+		select.close();
+		connection.close();
 		
 	}
 	

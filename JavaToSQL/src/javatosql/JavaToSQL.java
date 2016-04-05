@@ -40,15 +40,15 @@ public class JavaToSQL {
         pass = in.readLine();
         System.out.print("Database: ");
         db = in.readLine();
-        
+        Connection connection = null;
         try{
         	Class.forName("com.mysql.jdbc.Driver");
-        	Connection connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pass);
+        	connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pass);
         	return true;
         } catch (Exception e) {
         	e.printStackTrace();
         	return false;
-        } finally { connection.close(); }
+        } finally { try {connection.close(); } catch  (Exception e2) { e2.printStackTrace(); } }
         
 //        if (user.equals("user")) {
 //            if (pass.equals("pass")) {
@@ -132,13 +132,10 @@ public class JavaToSQL {
                 return true;
             }
             System.out.println("ERROR INSERTING " + first + " " + last + "...");
-            conn.close();
-            stmt.close();
-            rs.close();
             
         } catch(Exception e) {
             e.printStackTrace();
-        }
+        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { e2.printStackTrace(); } }
         return false;        
     } 
     
@@ -198,12 +195,9 @@ public class JavaToSQL {
 
                 System.out.println(data);
             }
-        rs.close();
-        stmt.close();
-        conn.close();
         }catch (Exception e) {
             e.printStackTrace();
-        }
+        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { e2.printStackTrace(); } }
     }
 
     private static void printOutMoviesFeaturingStars(BufferedReader in) throws IOException {
