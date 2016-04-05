@@ -38,7 +38,7 @@ public class JavaToSQL {
         user = in.readLine();
         System.out.print("Password: ");
         pass = in.readLine();
-        System.out.println("Database: ");
+        System.out.print("Database: ");
         db = in.readLine();
         
         try{
@@ -48,7 +48,7 @@ public class JavaToSQL {
         } catch (Exception e) {
         	e.printStackTrace();
         	return false;
-        }
+        } finally { connection.close(); }
         
 //        if (user.equals("user")) {
 //            if (pass.equals("pass")) {
