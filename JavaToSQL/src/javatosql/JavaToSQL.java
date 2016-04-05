@@ -181,12 +181,9 @@ public class JavaToSQL {
 //
 //            System.out.println(data);
 //        }
-        rs.close();
-        stmt.close();
-        conn.close();
         } catch (Exception e) {
             e.printStackTrace();
-        }        
+        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { e2.printStackTrace(); } }        
     }
     
     private static void selectById(String id) {
@@ -200,6 +197,25 @@ public class JavaToSQL {
             String sql = "select m.* from stars as s, movies as m, stars_in_movies as sm "
                 + "where s.id = " + id + " and s.id=sm.star_id and sm.movie_id=m.id";
             System.err.println(sql);
+            
+    		rs = stmt.executeQuery(sql);
+    		ResultSetMetaData metadata = rs.getMetaData();
+    		List<String> columnNames = new ArrayList<String>();
+    		int i;
+    		for(i = 1; i <= metadata.getColumnCount(); ++i){
+    			columnNames.add(metadata.getColumnName(i));
+    		}
+    		
+    		i = 0;
+    		while(i++ < 25 && rs.next()){
+    			int size = metadata.getColumnCount();
+    			for(int k = 1; k <= size; ++k){
+    				System.out.println(columnNames.get(k-1) + ": " + rs.getString(k));
+    			}
+    			System.out.println();
+    		}
+            
+            /*
             rs = stmt.executeQuery(sql);
             
             while(rs.next()) {
@@ -213,6 +229,7 @@ public class JavaToSQL {
 
                 System.out.println(data);
             }
+            */
         }catch (Exception e) {
             e.printStackTrace();
         } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { e2.printStackTrace(); } }
