@@ -204,7 +204,7 @@ public class JavaToSQL {
         System.out.print("Query star by name or id? (name/id): ");
         String ans = in.readLine().trim();
         if (ans.equals("name")) {
-        	String first = Helper.prompt("last name", in);
+        	String first = Helper.prompt("first name", in);
         	String last = Helper.prompt("last name", in);
             selectByName(first, last);
         }
