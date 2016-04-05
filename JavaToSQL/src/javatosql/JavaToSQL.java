@@ -200,13 +200,13 @@ public class JavaToSQL {
         } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { e2.printStackTrace(); } }
     }
 
-    private static void printOutMoviesFeaturingStars(BufferedReader in) throws IOException {
-        String[] fullName;
+    private static void printOutMoviesFeaturingStars(BufferedReader in) throws Exception {
         System.out.print("Query star by name or id? (name/id): ");
         String ans = in.readLine().trim();
         if (ans.equals("name")) {
-            fullName = Helper.nameArr("star's", in);
-            selectByName(fullName[0], fullName[1]);
+        	String first = Helper.prompt("last name", in);
+        	String last = Helper.prompt("last name", in);
+            selectByName(first, last);
         }
         else {
             System.out.print("Enter star's ID: ");
