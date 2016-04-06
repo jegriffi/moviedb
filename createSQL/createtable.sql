@@ -69,11 +69,12 @@ CREATE TABLE `moviedb`.`customers` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `first` VARCHAR(50) NOT NULL DEFAULT '',
   `last` VARCHAR(50) NOT NULL DEFAULT '',
-  `cc` VARCHAR(20) NOT NULL DEFAULT '',
-  `address` VARCHAR(200) NOT NULL DEFAULT '',
-  `email` VARCHAR(50) NOT NULL DEFAULT '',
-  `password` VARCHAR(20) NOT NULL DEFAULT '',
+  `cc` VARCHAR(50) NOT NULL,
+  `address` VARCHAR(50) NOT NULL DEFAULT '',
+  `email` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC),
   INDEX `cust_cc_idx` (`cc` ASC),
   CONSTRAINT `cust_cc`
     FOREIGN KEY (`cc`)
