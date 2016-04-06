@@ -33,9 +33,9 @@ public class JavaToSQL {
     }
     private static boolean loginScreen() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Would you like to exit: (y/n): ");
+        System.out.print("Would you like to login: (y/n): ");
         String exit = in.readLine().toLowerCase();
-        if(exit.equals("y"))
+        if(exit.equals("n"))
         	System.exit(0);
         System.out.print("User: ");
         user = in.readLine();
