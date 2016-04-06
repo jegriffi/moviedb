@@ -33,6 +33,10 @@ public class JavaToSQL {
     }
     private static boolean loginScreen() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Would you like to exit: (y/n): ");
+        String exit = in.readLine().toLowerCase();
+        if(exit.equals("y"))
+        	System.exit(0);
         System.out.print("User: ");
         user = in.readLine();
         System.out.print("Password: ");
@@ -45,9 +49,9 @@ public class JavaToSQL {
         	connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pass);
         	return true;
         } catch (Exception e) {
-        	e.printStackTrace();
+        	System.out.println(e.getLocalizedMessage());
         	return false;
-        } finally { try {connection.close(); } catch  (Exception e2) { e2.printStackTrace(); } }
+        } finally { try {connection.close(); } catch  (Exception e2) {  } }
         
 //        if (user.equals("user")) {
 //            if (pass.equals("pass")) {
@@ -72,9 +76,9 @@ public class JavaToSQL {
         System.out.println("3.) Insert customer into database");
         System.out.println("4.) Delete a customer from database");
         System.out.println("5.) Metadata");
-        System.out.println("6.) Exit the menu");
-        System.out.println("7.) Exit Program");
-        System.out.println("8.) Enter SQL command");
+        System.out.println("6.) Enter SQL command");
+        System.out.println("7.) Exit the menu");
+        System.out.println("8.) Exit Program");
         System.out.print("\nEnter option: ");
     }
     private static void runConsole() throws Exception {
@@ -98,13 +102,13 @@ public class JavaToSQL {
             case 5: 
                 Metadata.getDatabaseMetaData(db, user, pass);
                 break;
-            case 6:
+            case 7:
                 programFlow();
                 break;
-            case 7:
+            case 8:
                 System.exit(0);
                 break;
-            case 8:
+            case 6:
             	SQL.query(db, user, pass);
                 break;
             default:
@@ -133,8 +137,8 @@ public class JavaToSQL {
             System.out.println("ERROR INSERTING " + first + " " + last + "...");
             
         } catch(Exception e) {
-            e.printStackTrace();
-        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { e2.printStackTrace(); } }
+        	System.out.println(e.getLocalizedMessage());
+        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { System.out.println(e2.getLocalizedMessage()); } }
         return false;        
     } 
     
@@ -182,8 +186,8 @@ public class JavaToSQL {
 //            System.out.println(data);
 //        }
         } catch (Exception e) {
-            e.printStackTrace();
-        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { e2.printStackTrace(); } }        
+        	System.out.println(e.getLocalizedMessage());
+        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { System.out.println(e2.getLocalizedMessage()); } }        
     }
     
     private static void selectById(String id) {
@@ -231,22 +235,26 @@ public class JavaToSQL {
             }
             */
         }catch (Exception e) {
-            e.printStackTrace();
-        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { e2.printStackTrace(); } }
+        	System.out.println(e.getLocalizedMessage());
+        } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { System.out.println(e2.getLocalizedMessage()); } }
     }
 
     private static void printOutMoviesFeaturingStars(BufferedReader in) throws Exception {
         System.out.print("Query star by name or id? (name/id): ");
-        String ans = in.readLine().trim();
+        String ans = in.readLine().trim().toLowerCase();
+        System.out.println();
         if (ans.equals("name")) {
         	String first = Helper.prompt("first name", in);
         	String last = Helper.prompt("last name", in);
             selectByName(first, last);
         }
-        else {
+        else if (ans.equals("id")){
             System.out.print("Enter star's ID: ");
             ans = in.readLine().trim();
             selectById(ans);
-        }        
+        } else {
+        	System.out.println("Invalid input");
+        	printOutMoviesFeaturingStars(in);
+        }
     }
 }
