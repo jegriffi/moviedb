@@ -37,37 +37,26 @@ public class JavaToSQL {
         String exit = in.readLine().toLowerCase();
         if(exit.equals("n"))
         	System.exit(0);
+        
         System.out.print("User: ");
         user = in.readLine();
         System.out.print("Password: ");
         pass = in.readLine();
         System.out.print("Database: ");
         db = in.readLine();
+        
         Connection connection = null;
+        boolean valid = false;
         try{
         	Class.forName("com.mysql.jdbc.Driver");
         	connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pass);
-        	return true;
+        	valid = true;
         } catch (Exception e) {
         	System.out.println(e.getLocalizedMessage());
-        	return false;
         } finally { try {connection.close(); } catch  (Exception e2) {  } }
-        
-//        if (user.equals("user")) {
-//            if (pass.equals("pass")) {
-//                System.out.println("Login Successful...");
-//                return true;   
-//            }
-//            else {
-//                System.out.println("Password incorrect");
-//            }
-//        }
-//        else {
-//            System.out.println("Username does not exist");
-//        }
-        
-//        return false;
+        return valid;
     }
+    
     private static void consolePrompt() {
         System.out.println("\nMOVIE DATABASE");
         System.out.println("--------------");
