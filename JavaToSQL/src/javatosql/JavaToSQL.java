@@ -74,7 +74,10 @@ public class JavaToSQL {
         BufferedReader in  = new BufferedReader(new InputStreamReader(System.in));        
         
         String text = in.readLine();
-        int num = Integer.parseInt(text);
+        
+        int num = -1;
+        if(Character.isDigit(text.charAt(0)))
+        		num = Integer.parseInt(text);
         switch(num) {
             case 1:
                 printOutMoviesFeaturingStars(in);
@@ -100,6 +103,8 @@ public class JavaToSQL {
             case 6:
             	SQL.query(db, user, pass);
                 break;
+            case -1:
+            	break;
             default:
                 programFlow();
                 break;
