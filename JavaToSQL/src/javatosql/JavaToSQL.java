@@ -33,41 +33,30 @@ public class JavaToSQL {
     }
     private static boolean loginScreen() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Would you like to exit: (y/n): ");
+        System.out.print("Would you like to login: (y/n): ");
         String exit = in.readLine().toLowerCase();
-        if(exit.equals("y"))
+        if(exit.equals("n"))
         	System.exit(0);
+        
         System.out.print("User: ");
         user = in.readLine();
         System.out.print("Password: ");
         pass = in.readLine();
         System.out.print("Database: ");
         db = in.readLine();
+        
         Connection connection = null;
+        boolean valid = false;
         try{
         	Class.forName("com.mysql.jdbc.Driver");
         	connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pass);
-        	return true;
+        	valid = true;
         } catch (Exception e) {
         	System.out.println(e.getLocalizedMessage());
-        	return false;
         } finally { try {connection.close(); } catch  (Exception e2) {  } }
-        
-//        if (user.equals("user")) {
-//            if (pass.equals("pass")) {
-//                System.out.println("Login Successful...");
-//                return true;   
-//            }
-//            else {
-//                System.out.println("Password incorrect");
-//            }
-//        }
-//        else {
-//            System.out.println("Username does not exist");
-//        }
-        
-//        return false;
+        return valid;
     }
+    
     private static void consolePrompt() {
         System.out.println("\nMOVIE DATABASE");
         System.out.println("--------------");
@@ -85,7 +74,10 @@ public class JavaToSQL {
         BufferedReader in  = new BufferedReader(new InputStreamReader(System.in));        
         
         String text = in.readLine();
-        int num = Integer.parseInt(text);
+        
+        int num = -1;
+        if(Character.isDigit(text.charAt(0)))
+        		num = Integer.parseInt(text);
         switch(num) {
             case 1:
                 printOutMoviesFeaturingStars(in);
@@ -111,6 +103,8 @@ public class JavaToSQL {
             case 6:
             	SQL.query(db, user, pass);
                 break;
+            case -1:
+            	break;
             default:
                 programFlow();
                 break;
@@ -241,16 +235,20 @@ public class JavaToSQL {
 
     private static void printOutMoviesFeaturingStars(BufferedReader in) throws Exception {
         System.out.print("Query star by name or id? (name/id): ");
-        String ans = in.readLine().trim();
+        String ans = in.readLine().trim().toLowerCase();
+        System.out.println();
         if (ans.equals("name")) {
         	String first = Helper.prompt("first name", in);
         	String last = Helper.prompt("last name", in);
             selectByName(first, last);
         }
-        else {
+        else if (ans.equals("id")){
             System.out.print("Enter star's ID: ");
             ans = in.readLine().trim();
             selectById(ans);
-        }        
+        } else {
+        	System.out.println("Invalid input");
+        	printOutMoviesFeaturingStars(in);
+        }
     }
 }
