@@ -1,6 +1,6 @@
 package objects;
 
-import java.util.List;
+import java.util.Set;
 
 public class Movie {
 	
@@ -11,8 +11,7 @@ public class Movie {
 	String banner = "";
 	String trailer = "";
 	String genre = "";
-	List<String> stars = null;
-	
+	Set<String> stars = null;
 	
 	
 	/**
@@ -34,11 +33,11 @@ public class Movie {
 		this.genre = genre;
 	}
 	
-	public List<String> getStars() {
+	public Set<String> getStars() {
 		return stars;
 	}
 
-	public void setStars(List<String> stars) {
+	public void setStars(Set<String> stars) {
 		this.stars = stars;
 	}
 

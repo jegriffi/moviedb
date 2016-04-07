@@ -1,6 +1,6 @@
 package objects;
 
-import java.util.List;
+import java.util.Set;
 
 public class Star {
 	
@@ -9,7 +9,7 @@ public class Star {
 	String last = "";
 	String dob = "1-1-1";
 	String photo = "";
-	List<String> movies = null;
+	Set<String> movies = null;
 
 	public Star(int id, String first, String last, String dob, String photo) {
 		this.id = id;
@@ -19,11 +19,11 @@ public class Star {
 		this.photo = photo;
 	}
 	
-	public List<String> getMovies() {
+	public Set<String> getMovies() {
 		return movies;
 	}
 
-	public void setMovies(List<String> movies) {
+	public void setMovies(Set<String> movies) {
 		this.movies = movies;
 	}
 	
