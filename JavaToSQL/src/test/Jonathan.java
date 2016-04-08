@@ -5,6 +5,8 @@ import objects.*;
 import java.sql.*;
 import java.util.*;
 
+
+
 public class Jonathan {
 	
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -32,10 +34,29 @@ public class Jonathan {
    
         //moviesInGenre(48008, stmt);
         
-        userLogin("a@email.com","a2", stmt);
+        //userLogin("a@email.com","a2", stmt);
+        //beginsWithLetter('b', stmt);
         
         stmt.close();
         conn.close();
+        
+	}
+	
+	public static Set<Movie> beginsWithLetter(char letter, Statement select) throws Exception {
+		Set<Movie> movies = new HashSet<Movie>();
+		String query = "select movies.*, genres.name from movies, genres_in_movies, genres where title like '" + letter + "%'"
+					   + "and movies.id = genres_in_movies.movie_id and genres_in_movies.genre_id = genres.id";
+		
+		ResultSet rs = select.executeQuery(query);
+		
+		while(rs.next()){
+			Movie m = new Movie(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5),
+								rs.getString(6), rs.getString(7) );
+			movies.add(m);
+		}
+		
+		rs.close();
+		return movies;
 	}
 
 	/**
@@ -76,7 +97,6 @@ public class Jonathan {
 			Movie m = new Movie(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5),
 								rs.getString(6), rs.getString(7) );
 			movies.add(m);
-			print(m);
 		}
 		
 		rs.close();
@@ -95,17 +115,14 @@ public class Jonathan {
 			Movie m = new Movie(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5),
 								rs.getString(6), genre );
 			movies.add(m);
-			print(m);
 		}
-		
 		
 		rs.close();
 		return movies;
 	}
 	
-	public static Set<String> starsInMovie(int id, Statement select) throws Exception{
-		// TODO return Stars instead of String
-		Set<String> stars = new HashSet<String>();
+	public static Set<Star> starsInMovie(int id, Statement select) throws Exception{
+		Set<Star> stars = new HashSet<Star>();
 		String query = "select stars.* from stars, stars_in_movies "
 					 + "where " + id + " = stars_in_movies.movie_id and "
 					 + "stars_in_movies.star_id = stars.id";
@@ -113,7 +130,7 @@ public class Jonathan {
 		ResultSet rs = select.executeQuery(query);
 		
 		while(rs.next()){
-			String star = rs.getString("first") + " " + rs.getString("last");
+			Star star = new Star(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
 			stars.add(star);
 		}
 		
@@ -121,9 +138,8 @@ public class Jonathan {
 		return stars;
 	}
 	
-	public static Set<String> starsInMovie(String title, Statement select) throws Exception{
-		// TODO return set<Stars> instead of String
-		Set<String> stars = new HashSet<String>();
+	public static Set<Star> starsInMovie(String title, Statement select) throws Exception{
+		Set<Star> stars = new HashSet<Star>();
 		String query = "select stars.* from stars, stars_in_movies, movies "
 					 + "where '" + title + "' = movies.title and "
 					 + "movies.id = stars_in_movies.movie_id and "
@@ -132,7 +148,7 @@ public class Jonathan {
 		ResultSet rs = select.executeQuery(query);
 		
 		while(rs.next()){
-			String star = rs.getString("first") + " " + rs.getString("last");
+			Star star = new Star(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
 			stars.add(star);
 		}
 		

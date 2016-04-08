@@ -11,6 +11,14 @@ public class Star {
 	String photo = "";
 	Set<Movie> movies = null;
 
+	/**
+	 * 
+	 * @param id
+	 * @param first
+	 * @param last
+	 * @param dob
+	 * @param photo
+	 */
 	public Star(int id, String first, String last, String dob, String photo) {
 		this.id = id;
 		this.first = first;
