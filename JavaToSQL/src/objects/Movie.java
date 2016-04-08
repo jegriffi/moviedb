@@ -32,7 +32,7 @@ public class Movie {
 		this.trailer = trailer;
 		this.genre = genre;
 	}
-	
+
 	public Set<String> getStars() {
 		return stars;
 	}
@@ -61,5 +61,9 @@ public class Movie {
 	}
 	
 	
-
+	@Override
+	public String toString() {
+		return "Movie [id=" + id + ", title=" + title + ", year=" + year + ", director=" + director + ", banner="
+				+ banner + ", trailer=" + trailer + ", genre=" + genre + ", stars=" + stars + "]";
+	}
 }

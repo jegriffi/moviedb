@@ -43,4 +43,10 @@ public class Star {
 		return photo;
 	}
 
+	@Override
+	public String toString() {
+		return "Star [id=" + id + ", first=" + first + ", last=" + last + ", dob=" + dob + ", photo=" + photo
+				+ ", movies=" + movies + "]";
+	}
+
 }

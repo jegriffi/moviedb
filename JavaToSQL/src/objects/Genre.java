@@ -22,7 +22,6 @@ public class Genre {
 	 * @param genre
 	 */
 	public Genre(int id, String genre) {
-		super();
 		this.id = id;
 		this.genre = genre;
 	}

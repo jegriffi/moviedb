@@ -21,16 +21,6 @@ mysql > C:\abs\path\to\data.sql
 
 /* END WINDOWS */
 
-
-
-
-
-
-ssh -i some.pem user@ip.com
-
-mysql -u root -p pwd -db moviedb
-// opens mysql
-
 show databases; // show databases
 
 create database moviedb; // create databases
@@ -41,12 +31,67 @@ use moviedb
 
 describe servers; // duh
 
-/* IN UNIX JDBC Example */
-cd jdbc-example
-ls // output ==> bin lib src
+/****** Project 2 Notes *******/
+
+
+// COOKIES
+
+session.getAttribute("James");
+if(james  == null){
+	Create new user
+}
+// do stuff with james ;)
+
+session.setAttribute("James", jamesObject);
+
+// LOAD HTML INTO PAGE
+
+
+* start with making the sql calls with jdbc in the servlet to populate the class files for each of the tables
+		SERVLET CODE:
+		request.getSession().setAttributes("cards", cards);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+		dispatcher.forward(request, response);
+
+* go to /index.jsp to import the response..
+		List<CreditCards> cards = (List<CreditCards>)session.getAttribute("cards");
+
+** CACHE database results (servlet saves data requests from the mysql to the server's heap)
 
 
 
-select m.*
-from stars as s, movies as m, stars_in_movies as sm
-where s.first = 'Ben' and s.last = 'Stiller' and s.id=sm.star_id and sm.movie_id=m.idhi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
