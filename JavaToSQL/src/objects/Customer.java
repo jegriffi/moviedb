@@ -45,5 +45,12 @@ public class Customer {
 
 	public String getPassword() {
 		return password;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", first=" + first + ", last=" + last + ", cc=" + cc + ", address=" + address
+				+ ", email=" + email + ", password=" + password + "]";
+	}
+
 }

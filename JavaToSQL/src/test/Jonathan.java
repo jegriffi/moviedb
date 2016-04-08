@@ -32,25 +32,34 @@ public class Jonathan {
    
         //moviesInGenre(48008, stmt);
         
-        userLogin("a@.com","a2", stmt);
+        userLogin("a@email.com","a2", stmt);
         
         stmt.close();
         conn.close();
 	}
-	
+
+	/**
+	 * 
+	 * @param username
+	 * @param password
+	 * @param select
+	 * @return null if no user found, returns Customer class if user is found
+	 * @throws Exception
+	 */
 	public static Customer userLogin(String username, String password, Statement select) throws Exception{
-		Customer user = null;
 		
 		String query = "select * from customers where email='" + username + "' and password='" + password + "'";
-		
+		print(query);
 		ResultSet rs = select.executeQuery(query);
-		if(!rs.next()){
-			System.out.println("HI");
+		if(!rs.next())
 			return null;
-		}
 		
-		System.out.println(query);
+		Customer user = new Customer(rs.getInt(1), rs.getString(2), 
+									 rs.getString(3), rs.getString(4), 
+									 rs.getString(5), rs.getString(6), 
+									 rs.getString(7));
 		
+		rs.close();
 		return user;
 	}
 	

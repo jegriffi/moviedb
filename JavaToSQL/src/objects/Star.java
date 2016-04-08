@@ -9,7 +9,7 @@ public class Star {
 	String last = "";
 	String dob = "1-1-1";
 	String photo = "";
-	Set<String> movies = null;
+	Set<Movie> movies = null;
 
 	public Star(int id, String first, String last, String dob, String photo) {
 		this.id = id;
@@ -19,11 +19,11 @@ public class Star {
 		this.photo = photo;
 	}
 	
-	public Set<String> getMovies() {
+	public Set<Movie> getMovies() {
 		return movies;
 	}
 
-	public void setMovies(Set<String> movies) {
+	public void setMovies(Set<Movie> movies) {
 		this.movies = movies;
 	}
 	
@@ -47,6 +47,23 @@ public class Star {
 	public String toString() {
 		return "Star [id=" + id + ", first=" + first + ", last=" + last + ", dob=" + dob + ", photo=" + photo
 				+ ", movies=" + movies + "]";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null) return false;
+		if(obj == this) return true;
+		if(!(obj instanceof Star)) return false;
+		Star rhs = (Star) obj;
+		if (this.id != rhs.id) return false;
+		
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		return id;
+		//return super.hashCode();
 	}
 
 }

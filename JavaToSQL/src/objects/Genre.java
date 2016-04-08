@@ -41,5 +41,22 @@ public class Genre {
 	public String toString() {
 		return "Genre [id=" + id + ", genre=" + genre + ", movies=" + movies + "]";
 	}
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null) return false;
+		if(obj == this) return true;
+		if(!(obj instanceof Genre)) return false;
+		Genre rhs = (Genre) obj;
+		if (this.id != rhs.id) return false;
+		
+		
+		
+		return true;
+	}
+	@Override
+	public int hashCode() {
+		return id;
+		//return super.hashCode();
+	}
 	
 }
