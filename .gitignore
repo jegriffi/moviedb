@@ -12,7 +12,6 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 
-tomcat/
 
 # Class Files #
 *.class

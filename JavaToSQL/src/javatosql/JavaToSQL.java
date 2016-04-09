@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
+
+import objects.Star;
 /**
  *
  * @author James Griffin And Jonathan Nguyen
@@ -52,7 +54,8 @@ public class JavaToSQL {
         	connection = DriverManager.getConnection("jdbc:mysql:///"+db,user, pass);
         	valid = true;
         } catch (Exception e) {
-        	System.out.println(e.getLocalizedMessage());
+        	e.printStackTrace();
+        	//System.out.println(e.getLocalizedMessage());
         } finally { try {connection.close(); } catch  (Exception e2) {  } }
         return valid;
     }
@@ -135,6 +138,29 @@ public class JavaToSQL {
         } finally { try { conn.close(); stmt.close(); rs.close(); } catch (Exception e2) { System.out.println(e2.getLocalizedMessage()); } }
         return false;        
     } 
+    
+    public static List<Star> selectStars() {
+    	Connection conn = null;
+    	Statement stmt = null;
+    	ResultSet rs = null;
+    	List<Star> result = new ArrayList<>();
+    	try {
+    		Class.forName(JDBC_DRIVER).newInstance();
+    		conn = DriverManager.getConnection(DB_URL, user, pass);
+    		stmt = conn.createStatement();
+    		String sql = "select * from stars limit 10;";
+    		rs = stmt.executeQuery(sql);    		
+    		
+    		while (rs.next()) {
+    			result.add(new Star(Integer.parseInt(rs.getString(1)), rs.getString(2)
+    					, rs.getString(3), rs.getString(4), rs.getString(5)));
+    		}
+    		
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	return result;
+    }
     
     private static void selectByName(String first, String last) {
     Connection conn = null;
