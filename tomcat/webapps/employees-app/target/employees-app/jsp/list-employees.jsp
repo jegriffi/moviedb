@@ -21,7 +21,15 @@
                 <br></br>
             </form>
             
-            <!--Employees List-->
+		<% 
+		 /**
+		 HEY JON LOOK HERE 
+
+		 this is the part of the form that dynamically populates the tables according to the data its given 
+		 c:when is the if-statement | c:otherwise is the else statement | "${}" is the variable access 
+		  "${}" is the variable access from the EmployeeServlet class, inside you can get lists like "${douchbag.get(1)}" or whatever 
+		  **/
+		  %>
             <form action="/employee" method="post" id="employeeForm" role="form" >              
                 <c:choose>
                     <c:when test="${not empty employeeList}">

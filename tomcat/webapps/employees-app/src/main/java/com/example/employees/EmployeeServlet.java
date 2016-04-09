@@ -18,6 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 import objects.Star;
 import javatosql.JavaToSQL;
 
+
+
+//INSTEAD OF USING WEB.XML.....
+//this annotation basically messes with the url to show where exactly to look in the project structure
 @WebServlet(
     name="EmployeeServlet",
     urlPatterns={"/employee"}
@@ -36,7 +40,7 @@ public class EmployeeServlet extends HttpServlet {
         if (action != null) {
             switch(action) {
                 case "searchById":
-                    searchEmployeeById(req, resp);
+                    searchEmployeeById(req, resp); //not used...
                     break;
                 case "searchByName":
                     searchEmployeeByName(req, resp);
@@ -66,7 +70,9 @@ public class EmployeeServlet extends HttpServlet {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
         dispatcher.forward(req, resp);
     }
-    
+   
+    //gathers the list of Results (Stars in our case) and sends it to ForwardListEmployees();
+    //** for every list we query, we're going to need to create one of these functions to get the data **
     private void searchEmployeeByName(HttpServletRequest req, HttpServletResponse resp) 
             throws ServletException, IOException {
         //String employeeName = req.getParameter("employeeName");
@@ -76,7 +82,9 @@ public class EmployeeServlet extends HttpServlet {
 
         forwardListEmployees(req, resp, result);
     }
-    
+
+    //this function sends the attributes to the jsp file (nextJSP) where it will attach the lists needed
+    //unlike the searchEmployeeByName, i think there will only be ONE of these functions to send all the data to the .jsp file
     private void forwardListEmployees(HttpServletRequest req, HttpServletResponse resp, List employeeList)
             throws ServletException, IOException {
         String nextJSP = "/jsp/list-employees.jsp";

@@ -8,6 +8,10 @@ import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
 
+/*
+	this main class sets up the tomcat server on port 8080 and sets the hostname
+*/
+
 public class Main {
 	public static final Optional<String> PORT = Optional.ofNullable(System.getenv("PORT"));
 	public static final Optional<String> HOSTNAME = Optional.ofNullable(System.getenv("HOSTNAME"));
