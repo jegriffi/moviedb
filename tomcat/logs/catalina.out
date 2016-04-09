@@ -1,0 +1,1060 @@
+07-Apr-2016 15:11:13.271 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.33
+07-Apr-2016 15:11:13.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 18 2016 20:31:49 UTC
+07-Apr-2016 15:11:13.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.33.0
+07-Apr-2016 15:11:13.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+07-Apr-2016 15:11:13.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+07-Apr-2016 15:11:13.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+07-Apr-2016 15:11:13.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_71
+07-Apr-2016 15:11:13.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_71-b15
+07-Apr-2016 15:11:13.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+07-Apr-2016 15:11:13.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\dev\cs122b\tomcat
+07-Apr-2016 15:11:13.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\dev\cs122b\tomcat
+07-Apr-2016 15:11:13.274 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:/dev/cs122b/tomcat/conf/logging.properties
+07-Apr-2016 15:11:13.274 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+07-Apr-2016 15:11:13.274 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=C:/dev/cs122b/tomcat/endorsed
+07-Apr-2016 15:11:13.274 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:/dev/cs122b/tomcat
+07-Apr-2016 15:11:13.274 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:/dev/cs122b/tomcat
+07-Apr-2016 15:11:13.274 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:/dev/cs122b/tomcat/temp
+07-Apr-2016 15:11:13.274 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library 1.2.5 using APR version 1.5.1.
+07-Apr-2016 15:11:13.274 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+07-Apr-2016 15:11:13.915 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized (OpenSSL 1.0.2g  1 Mar 2016)
+07-Apr-2016 15:11:14.368 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:11:14.375 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:11:14.376 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1430 ms
+07-Apr-2016 15:11:14.403 SEVERE [main] org.apache.tomcat.util.digester.Digester.fatalError Parse Fatal Error at line 37 column 37: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+ org.xml.sax.SAXParseException; lineNumber: 37; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:152)
+	at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:117)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:71)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:34)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:110)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:82)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:95)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:394)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:339)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:11:14.405 WARNING [main] org.apache.naming.NamingContext.lookup Unexpected exception resolving reference
+ org.xml.sax.SAXParseException; lineNumber: 37; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:152)
+	at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:117)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:71)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:34)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:110)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:82)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:95)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:394)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:339)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:11:14.405 SEVERE [main] org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans Exception processing Global JNDI Resources
+ javax.naming.NamingException: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:858)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:152)
+	at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:117)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:71)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:34)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:110)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:82)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:95)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:394)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:339)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:11:14.406 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+07-Apr-2016 15:11:14.406 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.33
+07-Apr-2016 15:11:14.408 SEVERE [main] org.apache.tomcat.util.digester.Digester.fatalError Parse Fatal Error at line 37 column 37: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+ org.xml.sax.SAXParseException; lineNumber: 37; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:166)
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:11:14.409 WARNING [main] org.apache.naming.NamingContext.lookup Unexpected exception resolving reference
+ org.xml.sax.SAXParseException; lineNumber: 37; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:166)
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:11:14.410 SEVERE [main] org.apache.catalina.realm.UserDatabaseRealm.startInternal Exception looking up UserDatabase under key UserDatabase
+ javax.naming.NamingException: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:858)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:166)
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:11:14.411 SEVERE [main] org.apache.catalina.realm.CombinedRealm.startInternal Failed to start "org.apache.catalina.realm.UserDatabaseRealm" realm
+ org.apache.catalina.LifecycleException: Failed to start component [Realm[UserDatabaseRealm]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:153)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+Caused by: org.apache.catalina.LifecycleException: No UserDatabase component found under key UserDatabase
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:241)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	... 17 more
+
+07-Apr-2016 15:11:14.417 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\docs
+07-Apr-2016 15:11:14.722 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\docs has finished in 305 ms
+07-Apr-2016 15:11:14.723 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\examples
+07-Apr-2016 15:11:15.466 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\examples has finished in 743 ms
+07-Apr-2016 15:11:15.466 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\host-manager
+07-Apr-2016 15:11:15.502 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\host-manager has finished in 36 ms
+07-Apr-2016 15:11:15.502 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\manager
+07-Apr-2016 15:11:15.591 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\manager has finished in 89 ms
+07-Apr-2016 15:11:15.592 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\ROOT
+07-Apr-2016 15:11:15.610 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\ROOT has finished in 19 ms
+07-Apr-2016 15:11:15.613 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:11:15.620 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:11:15.622 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1245 ms
+07-Apr-2016 15:12:43.905 WARNING [http-apr-9999-exec-7] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:12:44.211 WARNING [http-apr-9999-exec-8] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:12:44.457 WARNING [http-apr-9999-exec-9] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:12:44.693 WARNING [http-apr-9999-exec-10] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:12:44.938 WARNING [http-apr-9999-exec-1] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:12:45.184 WARNING [http-apr-9999-exec-2] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:13:40.915 WARNING [http-apr-9999-exec-7] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:14:02.629 WARNING [http-apr-9999-exec-9] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:14:07.100 WARNING [http-apr-9999-exec-1] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:15:36.098 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive C:\dev\cs122b\tomcat\webapps\jspTest.war
+07-Apr-2016 15:15:36.337 INFO [localhost-startStop-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+07-Apr-2016 15:15:36.376 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive C:\dev\cs122b\tomcat\webapps\jspTest.war has finished in 278 ms
+07-Apr-2016 15:17:34.487 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+07-Apr-2016 15:17:34.487 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:17:34.540 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:17:34.591 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
+07-Apr-2016 15:17:34.660 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:17:34.727 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:17:34.780 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:17:34.781 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:17:48.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.33
+07-Apr-2016 15:17:48.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 18 2016 20:31:49 UTC
+07-Apr-2016 15:17:48.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.33.0
+07-Apr-2016 15:17:48.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+07-Apr-2016 15:17:48.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+07-Apr-2016 15:17:48.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+07-Apr-2016 15:17:48.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_71
+07-Apr-2016 15:17:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_71-b15
+07-Apr-2016 15:17:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+07-Apr-2016 15:17:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\dev\cs122b\tomcat
+07-Apr-2016 15:17:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\dev\cs122b\tomcat
+07-Apr-2016 15:17:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:/dev/cs122b/tomcat/conf/logging.properties
+07-Apr-2016 15:17:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+07-Apr-2016 15:17:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=C:/dev/cs122b/tomcat/endorsed
+07-Apr-2016 15:17:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:/dev/cs122b/tomcat
+07-Apr-2016 15:17:48.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:/dev/cs122b/tomcat
+07-Apr-2016 15:17:48.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:/dev/cs122b/tomcat/temp
+07-Apr-2016 15:17:48.208 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library 1.2.5 using APR version 1.5.1.
+07-Apr-2016 15:17:48.208 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+07-Apr-2016 15:17:48.844 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized (OpenSSL 1.0.2g  1 Mar 2016)
+07-Apr-2016 15:17:48.950 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:17:48.957 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:17:48.958 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1078 ms
+07-Apr-2016 15:17:48.984 SEVERE [main] org.apache.tomcat.util.digester.Digester.fatalError Parse Fatal Error at line 39 column 37: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+ org.xml.sax.SAXParseException; lineNumber: 39; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:152)
+	at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:117)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:71)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:34)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:110)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:82)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:95)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:394)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:339)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:17:48.985 WARNING [main] org.apache.naming.NamingContext.lookup Unexpected exception resolving reference
+ org.xml.sax.SAXParseException; lineNumber: 39; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:152)
+	at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:117)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:71)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:34)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:110)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:82)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:95)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:394)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:339)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:17:48.986 SEVERE [main] org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans Exception processing Global JNDI Resources
+ javax.naming.NamingException: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:858)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:152)
+	at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:117)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:71)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:34)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:110)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:82)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:95)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:394)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:339)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:17:48.986 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+07-Apr-2016 15:17:48.986 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.33
+07-Apr-2016 15:17:48.989 SEVERE [main] org.apache.tomcat.util.digester.Digester.fatalError Parse Fatal Error at line 39 column 37: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+ org.xml.sax.SAXParseException; lineNumber: 39; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:166)
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:17:48.990 WARNING [main] org.apache.naming.NamingContext.lookup Unexpected exception resolving reference
+ org.xml.sax.SAXParseException; lineNumber: 39; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:166)
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:17:48.991 SEVERE [main] org.apache.catalina.realm.UserDatabaseRealm.startInternal Exception looking up UserDatabase under key UserDatabase
+ javax.naming.NamingException: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:858)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:166)
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:17:48.991 SEVERE [main] org.apache.catalina.realm.CombinedRealm.startInternal Failed to start "org.apache.catalina.realm.UserDatabaseRealm" realm
+ org.apache.catalina.LifecycleException: Failed to start component [Realm[UserDatabaseRealm]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:153)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+Caused by: org.apache.catalina.LifecycleException: No UserDatabase component found under key UserDatabase
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:241)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	... 17 more
+
+07-Apr-2016 15:17:49.009 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive C:\dev\cs122b\tomcat\webapps\jspTest.war
+07-Apr-2016 15:17:49.315 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+07-Apr-2016 15:17:49.387 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive C:\dev\cs122b\tomcat\webapps\jspTest.war has finished in 377 ms
+07-Apr-2016 15:17:49.387 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\docs
+07-Apr-2016 15:17:49.407 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\docs has finished in 20 ms
+07-Apr-2016 15:17:49.407 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\examples
+07-Apr-2016 15:17:49.703 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\examples has finished in 296 ms
+07-Apr-2016 15:17:49.703 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\host-manager
+07-Apr-2016 15:17:49.729 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\host-manager has finished in 26 ms
+07-Apr-2016 15:17:49.729 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\manager
+07-Apr-2016 15:17:49.749 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\manager has finished in 20 ms
+07-Apr-2016 15:17:49.749 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\ROOT
+07-Apr-2016 15:17:49.766 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\ROOT has finished in 17 ms
+07-Apr-2016 15:17:49.770 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:17:49.779 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:17:49.781 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 823 ms
+07-Apr-2016 15:18:02.235 WARNING [http-apr-9999-exec-10] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:18:02.375 WARNING [http-apr-9999-exec-1] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:18:02.514 WARNING [http-apr-9999-exec-2] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:18:02.647 WARNING [http-apr-9999-exec-3] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:18:02.798 WARNING [http-apr-9999-exec-4] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:18:02.942 WARNING [http-apr-9999-exec-5] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:18:03.086 WARNING [http-apr-9999-exec-6] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:18:03.205 WARNING [http-apr-9999-exec-7] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:19:46.309 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+07-Apr-2016 15:19:46.310 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:19:46.362 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:19:46.413 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
+07-Apr-2016 15:19:46.465 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:19:46.516 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:19:46.567 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:19:46.567 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:20:03.049 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.33
+07-Apr-2016 15:20:03.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 18 2016 20:31:49 UTC
+07-Apr-2016 15:20:03.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.33.0
+07-Apr-2016 15:20:03.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+07-Apr-2016 15:20:03.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+07-Apr-2016 15:20:03.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+07-Apr-2016 15:20:03.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_71
+07-Apr-2016 15:20:03.050 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_71-b15
+07-Apr-2016 15:20:03.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+07-Apr-2016 15:20:03.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\dev\cs122b\tomcat
+07-Apr-2016 15:20:03.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\dev\cs122b\tomcat
+07-Apr-2016 15:20:03.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:/dev/cs122b/tomcat/conf/logging.properties
+07-Apr-2016 15:20:03.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+07-Apr-2016 15:20:03.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=C:/dev/cs122b/tomcat/endorsed
+07-Apr-2016 15:20:03.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:/dev/cs122b/tomcat
+07-Apr-2016 15:20:03.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:/dev/cs122b/tomcat
+07-Apr-2016 15:20:03.051 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:/dev/cs122b/tomcat/temp
+07-Apr-2016 15:20:03.052 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library 1.2.5 using APR version 1.5.1.
+07-Apr-2016 15:20:03.052 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+07-Apr-2016 15:20:03.686 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized (OpenSSL 1.0.2g  1 Mar 2016)
+07-Apr-2016 15:20:03.793 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:20:03.800 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:20:03.801 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1067 ms
+07-Apr-2016 15:20:03.826 SEVERE [main] org.apache.tomcat.util.digester.Digester.fatalError Parse Fatal Error at line 39 column 37: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+ org.xml.sax.SAXParseException; lineNumber: 39; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:152)
+	at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:117)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:71)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:34)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:110)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:82)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:95)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:394)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:339)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:20:03.827 WARNING [main] org.apache.naming.NamingContext.lookup Unexpected exception resolving reference
+ org.xml.sax.SAXParseException; lineNumber: 39; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:152)
+	at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:117)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:71)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:34)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:110)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:82)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:95)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:394)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:339)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:20:03.828 SEVERE [main] org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans Exception processing Global JNDI Resources
+ javax.naming.NamingException: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:858)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:152)
+	at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:117)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:71)
+	at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:34)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:110)
+	at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:82)
+	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:95)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:394)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:339)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:780)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:20:03.828 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+07-Apr-2016 15:20:03.828 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.33
+07-Apr-2016 15:20:03.831 SEVERE [main] org.apache.tomcat.util.digester.Digester.fatalError Parse Fatal Error at line 39 column 37: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+ org.xml.sax.SAXParseException; lineNumber: 39; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:166)
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:20:03.832 WARNING [main] org.apache.naming.NamingContext.lookup Unexpected exception resolving reference
+ org.xml.sax.SAXParseException; lineNumber: 39; columnNumber: 37; The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1470)
+	at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:416)
+	at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:102)
+	at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:94)
+	at javax.naming.spi.NamingManager.getObjectInstance(Unknown Source)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:841)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:166)
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:20:03.833 SEVERE [main] org.apache.catalina.realm.UserDatabaseRealm.startInternal Exception looking up UserDatabase under key UserDatabase
+ javax.naming.NamingException: The value of attribute "password" associated with an element type "user" must not contain the '<' character.
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:858)
+	at org.apache.naming.NamingContext.lookup(NamingContext.java:166)
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+
+07-Apr-2016 15:20:03.833 SEVERE [main] org.apache.catalina.realm.CombinedRealm.startInternal Failed to start "org.apache.catalina.realm.UserDatabaseRealm" realm
+ org.apache.catalina.LifecycleException: Failed to start component [Realm[UserDatabaseRealm]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:153)
+	at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:250)
+	at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:904)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:441)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:629)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:351)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:485)
+Caused by: org.apache.catalina.LifecycleException: No UserDatabase component found under key UserDatabase
+	at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:241)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	... 17 more
+
+07-Apr-2016 15:20:03.852 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive C:\dev\cs122b\tomcat\webapps\jspTest.war
+07-Apr-2016 15:20:04.152 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+07-Apr-2016 15:20:04.228 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive C:\dev\cs122b\tomcat\webapps\jspTest.war has finished in 376 ms
+07-Apr-2016 15:20:04.229 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\docs
+07-Apr-2016 15:20:04.245 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\docs has finished in 16 ms
+07-Apr-2016 15:20:04.245 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\examples
+07-Apr-2016 15:20:04.513 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\examples has finished in 268 ms
+07-Apr-2016 15:20:04.513 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\host-manager
+07-Apr-2016 15:20:04.535 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\host-manager has finished in 21 ms
+07-Apr-2016 15:20:04.535 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\manager
+07-Apr-2016 15:20:04.559 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\manager has finished in 24 ms
+07-Apr-2016 15:20:04.560 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\ROOT
+07-Apr-2016 15:20:04.581 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\ROOT has finished in 22 ms
+07-Apr-2016 15:20:04.584 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:20:04.592 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:20:04.594 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 792 ms
+07-Apr-2016 15:21:39.870 WARNING [http-apr-9999-exec-10] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.369 WARNING [http-apr-9999-exec-1] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.400 WARNING [http-apr-9999-exec-3] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.432 WARNING [http-apr-9999-exec-2] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.464 WARNING [http-apr-9999-exec-4] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.495 WARNING [http-apr-9999-exec-5] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.528 WARNING [http-apr-9999-exec-6] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.560 WARNING [http-apr-9999-exec-8] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.593 WARNING [http-apr-9999-exec-7] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.624 WARNING [http-apr-9999-exec-9] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.656 WARNING [http-apr-9999-exec-10] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.688 WARNING [http-apr-9999-exec-1] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.720 WARNING [http-apr-9999-exec-3] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.752 WARNING [http-apr-9999-exec-2] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.784 WARNING [http-apr-9999-exec-4] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.816 WARNING [http-apr-9999-exec-5] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.847 WARNING [http-apr-9999-exec-6] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.879 WARNING [http-apr-9999-exec-8] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.912 WARNING [http-apr-9999-exec-7] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.944 WARNING [http-apr-9999-exec-9] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:40.976 WARNING [http-apr-9999-exec-10] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.008 WARNING [http-apr-9999-exec-1] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.040 WARNING [http-apr-9999-exec-3] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.071 WARNING [http-apr-9999-exec-2] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.104 WARNING [http-apr-9999-exec-4] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.136 WARNING [http-apr-9999-exec-5] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.167 WARNING [http-apr-9999-exec-6] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.199 WARNING [http-apr-9999-exec-8] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.231 WARNING [http-apr-9999-exec-7] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.262 WARNING [http-apr-9999-exec-9] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.295 WARNING [http-apr-9999-exec-10] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.327 WARNING [http-apr-9999-exec-1] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.359 WARNING [http-apr-9999-exec-3] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.391 WARNING [http-apr-9999-exec-2] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.423 WARNING [http-apr-9999-exec-4] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.455 WARNING [http-apr-9999-exec-5] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.487 WARNING [http-apr-9999-exec-6] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.519 WARNING [http-apr-9999-exec-8] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.551 WARNING [http-apr-9999-exec-7] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.583 WARNING [http-apr-9999-exec-9] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.615 WARNING [http-apr-9999-exec-10] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.647 WARNING [http-apr-9999-exec-1] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.678 WARNING [http-apr-9999-exec-3] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.710 WARNING [http-apr-9999-exec-2] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.743 WARNING [http-apr-9999-exec-4] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.774 WARNING [http-apr-9999-exec-5] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.806 WARNING [http-apr-9999-exec-6] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.839 WARNING [http-apr-9999-exec-8] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.870 WARNING [http-apr-9999-exec-7] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.902 WARNING [http-apr-9999-exec-9] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.934 WARNING [http-apr-9999-exec-10] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.966 WARNING [http-apr-9999-exec-1] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:41.998 WARNING [http-apr-9999-exec-3] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.030 WARNING [http-apr-9999-exec-2] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.062 WARNING [http-apr-9999-exec-4] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.094 WARNING [http-apr-9999-exec-5] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.125 WARNING [http-apr-9999-exec-6] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.157 WARNING [http-apr-9999-exec-8] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.189 WARNING [http-apr-9999-exec-7] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.221 WARNING [http-apr-9999-exec-9] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.254 WARNING [http-apr-9999-exec-10] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.286 WARNING [http-apr-9999-exec-1] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.318 WARNING [http-apr-9999-exec-3] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.349 WARNING [http-apr-9999-exec-2] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.381 WARNING [http-apr-9999-exec-4] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.414 WARNING [http-apr-9999-exec-5] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.446 WARNING [http-apr-9999-exec-6] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.478 WARNING [http-apr-9999-exec-8] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.510 WARNING [http-apr-9999-exec-7] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.541 WARNING [http-apr-9999-exec-9] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.573 WARNING [http-apr-9999-exec-10] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.605 WARNING [http-apr-9999-exec-1] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.637 WARNING [http-apr-9999-exec-3] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.669 WARNING [http-apr-9999-exec-2] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.701 WARNING [http-apr-9999-exec-4] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.733 WARNING [http-apr-9999-exec-5] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.765 WARNING [http-apr-9999-exec-6] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.797 WARNING [http-apr-9999-exec-8] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.829 WARNING [http-apr-9999-exec-7] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.860 WARNING [http-apr-9999-exec-9] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:21:42.893 WARNING [http-apr-9999-exec-10] org.apache.catalina.realm.LockOutRealm.authenticate An attempt was made to authenticate the locked user "user"
+07-Apr-2016 15:27:57.820 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+07-Apr-2016 15:27:57.821 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:27:57.874 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:27:57.924 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
+07-Apr-2016 15:27:57.973 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:27:58.025 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:27:58.077 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:27:58.078 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:28:12.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.33
+07-Apr-2016 15:28:12.651 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 18 2016 20:31:49 UTC
+07-Apr-2016 15:28:12.651 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.33.0
+07-Apr-2016 15:28:12.651 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+07-Apr-2016 15:28:12.651 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+07-Apr-2016 15:28:12.651 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+07-Apr-2016 15:28:12.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_71
+07-Apr-2016 15:28:12.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_71-b15
+07-Apr-2016 15:28:12.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+07-Apr-2016 15:28:12.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\dev\cs122b\tomcat
+07-Apr-2016 15:28:12.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\dev\cs122b\tomcat
+07-Apr-2016 15:28:12.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:/dev/cs122b/tomcat/conf/logging.properties
+07-Apr-2016 15:28:12.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+07-Apr-2016 15:28:12.653 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=C:/dev/cs122b/tomcat/endorsed
+07-Apr-2016 15:28:12.653 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:/dev/cs122b/tomcat
+07-Apr-2016 15:28:12.653 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:/dev/cs122b/tomcat
+07-Apr-2016 15:28:12.653 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:/dev/cs122b/tomcat/temp
+07-Apr-2016 15:28:12.653 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library 1.2.5 using APR version 1.5.1.
+07-Apr-2016 15:28:12.653 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+07-Apr-2016 15:28:13.270 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized (OpenSSL 1.0.2g  1 Mar 2016)
+07-Apr-2016 15:28:13.375 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:28:13.383 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:28:13.384 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1047 ms
+07-Apr-2016 15:28:13.406 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+07-Apr-2016 15:28:13.406 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.33
+07-Apr-2016 15:28:13.426 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive C:\dev\cs122b\tomcat\webapps\jspTest.war
+07-Apr-2016 15:28:13.739 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+07-Apr-2016 15:28:13.812 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive C:\dev\cs122b\tomcat\webapps\jspTest.war has finished in 385 ms
+07-Apr-2016 15:28:13.812 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\docs
+07-Apr-2016 15:28:13.830 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\docs has finished in 17 ms
+07-Apr-2016 15:28:13.830 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\examples
+07-Apr-2016 15:28:14.110 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\examples has finished in 280 ms
+07-Apr-2016 15:28:14.110 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\host-manager
+07-Apr-2016 15:28:14.137 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\host-manager has finished in 27 ms
+07-Apr-2016 15:28:14.137 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\manager
+07-Apr-2016 15:28:14.163 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\manager has finished in 26 ms
+07-Apr-2016 15:28:14.163 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\ROOT
+07-Apr-2016 15:28:14.183 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\ROOT has finished in 20 ms
+07-Apr-2016 15:28:14.185 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-apr-9999"]
+07-Apr-2016 15:28:14.192 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-apr-8009"]
+07-Apr-2016 15:28:14.195 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 811 ms
+07-Apr-2016 15:28:32.713 INFO [http-apr-9999-exec-9] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 15:28:32.823 INFO [http-apr-9999-exec-9] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 15:28:37.651 INFO [http-apr-9999-exec-4] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 15:28:37.712 INFO [http-apr-9999-exec-4] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 15:32:36.035 INFO [http-apr-9999-exec-13] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 15:32:36.113 WARNING [http-apr-9999-exec-13] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [jspTest] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+07-Apr-2016 15:32:36.132 WARNING [http-apr-9999-exec-13] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [jspTest] appears to have started a thread named [MySQL Statement Cancellation Timer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.Object.wait(Unknown Source)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+07-Apr-2016 15:32:36.237 INFO [http-apr-9999-exec-13] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 15:50:47.801 INFO [http-apr-9999-exec-20] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 15:50:47.817 WARNING [http-apr-9999-exec-20] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [jspTest] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+07-Apr-2016 15:50:47.818 WARNING [http-apr-9999-exec-20] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [jspTest] appears to have started a thread named [MySQL Statement Cancellation Timer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.Object.wait(Unknown Source)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+07-Apr-2016 15:50:47.897 INFO [Finalizer] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load [com.mysql.jdbc.profiler.ProfileEventSink]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [com.mysql.jdbc.profiler.ProfileEventSink]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1325)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1313)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1178)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1139)
+	at com.mysql.jdbc.Connection.realClose(Connection.java:4959)
+	at com.mysql.jdbc.Connection.cleanup(Connection.java:2063)
+	at com.mysql.jdbc.Connection.finalize(Connection.java:3403)
+	at java.lang.System$2.invokeFinalize(Unknown Source)
+	at java.lang.ref.Finalizer.runFinalizer(Unknown Source)
+	at java.lang.ref.Finalizer.access$100(Unknown Source)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Unknown Source)
+
+07-Apr-2016 15:50:47.904 INFO [http-apr-9999-exec-20] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 16:07:33.999 INFO [http-apr-9999-exec-30] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 16:07:34.015 WARNING [http-apr-9999-exec-30] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [jspTest] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+07-Apr-2016 16:07:34.016 WARNING [http-apr-9999-exec-30] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [jspTest] appears to have started a thread named [MySQL Statement Cancellation Timer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.Object.wait(Unknown Source)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+07-Apr-2016 16:07:34.106 INFO [http-apr-9999-exec-30] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 16:13:49.892 INFO [http-apr-9999-exec-40] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 16:13:49.979 INFO [Finalizer] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load [java.net.BindException]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.net.BindException]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1325)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1313)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1178)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1139)
+	at com.mysql.jdbc.CommunicationsException.<init>(CommunicationsException.java:161)
+	at com.mysql.jdbc.MysqlIO.send(MysqlIO.java:2759)
+	at com.mysql.jdbc.MysqlIO.quit(MysqlIO.java:1410)
+	at com.mysql.jdbc.Connection.realClose(Connection.java:4947)
+	at com.mysql.jdbc.Connection.cleanup(Connection.java:2063)
+	at com.mysql.jdbc.Connection.finalize(Connection.java:3403)
+	at java.lang.System$2.invokeFinalize(Unknown Source)
+	at java.lang.ref.Finalizer.runFinalizer(Unknown Source)
+	at java.lang.ref.Finalizer.access$100(Unknown Source)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Unknown Source)
+
+07-Apr-2016 16:13:49.980 INFO [Finalizer] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load [com.mysql.jdbc.profiler.ProfileEventSink]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [com.mysql.jdbc.profiler.ProfileEventSink]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1325)
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1313)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1178)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1139)
+	at com.mysql.jdbc.Connection.realClose(Connection.java:4959)
+	at com.mysql.jdbc.Connection.cleanup(Connection.java:2063)
+	at com.mysql.jdbc.Connection.finalize(Connection.java:3403)
+	at java.lang.System$2.invokeFinalize(Unknown Source)
+	at java.lang.ref.Finalizer.runFinalizer(Unknown Source)
+	at java.lang.ref.Finalizer.access$100(Unknown Source)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Unknown Source)
+
+07-Apr-2016 16:13:50.003 INFO [http-apr-9999-exec-40] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 16:15:21.819 INFO [http-apr-9999-exec-49] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 16:15:21.913 INFO [http-apr-9999-exec-49] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 16:15:49.086 INFO [http-apr-9999-exec-51] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 16:15:49.170 INFO [http-apr-9999-exec-51] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 16:26:31.656 INFO [http-apr-9999-exec-56] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 16:26:31.743 INFO [http-apr-9999-exec-56] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 16:31:22.512 INFO [http-apr-9999-exec-65] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 16:31:22.617 INFO [http-apr-9999-exec-65] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 16:38:02.926 INFO [http-apr-9999-exec-78] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 16:38:02.990 INFO [http-apr-9999-exec-78] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 16:39:51.418 INFO [http-apr-9999-exec-81] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 16:39:51.496 INFO [http-apr-9999-exec-81] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+07-Apr-2016 17:05:33.128 INFO [http-apr-9999-exec-88] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] has started
+07-Apr-2016 17:05:33.143 WARNING [http-apr-9999-exec-88] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [jspTest] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+07-Apr-2016 17:05:33.144 WARNING [http-apr-9999-exec-88] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [jspTest] appears to have started a thread named [MySQL Statement Cancellation Timer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.Object.wait(Unknown Source)
+ java.util.TimerThread.mainLoop(Unknown Source)
+ java.util.TimerThread.run(Unknown Source)
+07-Apr-2016 17:05:33.222 INFO [http-apr-9999-exec-88] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/jspTest] is completed
+08-Apr-2016 05:35:26.195 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\bsTest
+08-Apr-2016 05:35:26.263 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\bsTest has finished in 69 ms
+08-Apr-2016 14:53:39.453 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\dev\cs122b\tomcat\webapps\employees-app
+08-Apr-2016 14:53:39.654 INFO [localhost-startStop-3] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\dev\cs122b\tomcat\webapps\employees-app has finished in 207 ms
