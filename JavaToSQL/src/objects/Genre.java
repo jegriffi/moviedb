@@ -5,18 +5,8 @@ import java.util.*;
 public class Genre {
 	int id = 0;
 	String genre = "";
-	Set<String> movies = null;
-	/**
-	 * @param id
-	 * @param genre
-	 * @param movies
-	 */
-	public Genre(int id, String genre, Set<String> movies) {
-		super();
-		this.id = id;
-		this.genre = genre;
-		this.movies = movies;
-	}
+	Set<Movie> movies = null;
+	
 	/**
 	 * @param id
 	 * @param genre
@@ -24,11 +14,18 @@ public class Genre {
 	public Genre(int id, String genre) {
 		this.id = id;
 		this.genre = genre;
+		movies = new HashSet<Movie>();
+		
 	}
-	public Set<String> getMovies() {
+	
+	public void addMovie(Movie m){
+		movies.add(m);
+	}
+
+	public Set<Movie> getMovies() {
 		return movies;
 	}
-	public void setMovies(Set<String> movies) {
+	public void setMovies(Set<Movie> movies) {
 		this.movies = movies;
 	}
 	public int getId() {
@@ -39,8 +36,17 @@ public class Genre {
 	}
 	@Override
 	public String toString() {
-		return "Genre [id=" + id + ", genre=" + genre + ", movies=" + movies + "]";
+		return "Genre [id=" + id + ", genre=" + genre + ", \n\tmovies=" + movieNames() + "]";
 	}
+	
+	private String movieNames(){
+		String names = "";
+		for(Movie m : movies){
+			names += m.getTitle() + ", ";
+		}
+		return names;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if(obj == null) return false;

@@ -20,7 +20,6 @@ public class Jonathan {
     }
 
 	public static void main(String[] args) throws Exception {
-		
 		Class.forName(JDBC_DRIVER).newInstance();
 		Connection conn = DriverManager.getConnection("jdbc:mysql:///"+db,user, pass);
 		
@@ -37,21 +36,149 @@ public class Jonathan {
         //userLogin("a@email.com","a2", stmt);
         //beginsWithLetter('b', stmt);
         
+        Map<Integer, Movie> movies_id = moviesFromDatabase(stmt);
+        Map<Integer, Star> stars_id = starsFromDatabase(stmt);
+        Map<Integer, Genre> genres_id = genresFromDatabase(stmt);
+        movie_star(movies_id, stars_id, stmt);
+        movie_genre(movies_id, genres_id, stmt);
+        
+        Map<String, Star> stars_first = starsByName(stars_id);
+        
+        System.out.println(stars_first.get("Jude Law"));
+        
+        
+        
         stmt.close();
         conn.close();
         
 	}
 	
-	public static Set<Movie> beginsWithLetter(char letter, Statement select) throws Exception {
-		Set<Movie> movies = new HashSet<Movie>();
-		String query = "select movies.*, genres.name from movies, genres_in_movies, genres where title like '" + letter + "%'"
-					   + "and movies.id = genres_in_movies.movie_id and genres_in_movies.genre_id = genres.id";
+	public static Map<String, Star> starsByName(Map<Integer, Star> stars){
+		Map<String, Star> toReturn = new HashMap<String, Star>();
+		
+		for(Star s : stars.values()){
+			String key = s.getFirst() + " " + s.getLast();
+			toReturn.put(s.getFirst() + " " + s.getLast(), s);
+		}
+		
+		return toReturn;
+	}
+	
+	public static Map<String, Genre> genresByName(Map<Integer, Genre> genres){
+		Map<String, Genre> toReturn = new HashMap<String, Genre>();
+		
+		for(Genre g : genres.values()){
+			toReturn.put(g.getGenre(), g);
+		}
+		
+		return toReturn;
+	}
+	
+	public static Map<String, Movie> moviesByTitle(Map<Integer, Movie> movies){
+		Map<String, Movie> toReturn = new HashMap<String, Movie>();
+		
+		for(Movie m : movies.values()){
+			toReturn.put(m.getTitle(), m);
+		}
+		
+		return toReturn;
+	}
+	
+	public static void movie_star(Map<Integer, Movie> movies, Map<Integer, Star> stars, Statement select ) throws Exception{
+		String query = "select * from stars_in_movies";
+		ResultSet rs = select.executeQuery(query);
+		
+		while(rs.next()){
+			int star_id = rs.getInt(1);
+			int movie_id = rs.getInt(2);
+			
+			Star s = stars.get(star_id);
+			Movie m = movies.get(movie_id);
+			
+			s.addMovie(m);
+			m.addStar(s);
+		}
+		
+		rs.close();
+	}
+	
+	public static void movie_genre(Map<Integer, Movie> movies, Map<Integer, Genre> genres, Statement select) throws Exception{
+		String query = "select * from genres_in_movies";
+		ResultSet rs = select.executeQuery(query);
+		
+		while(rs.next()){
+			int genre_id = rs.getInt(1);
+			int movie_id = rs.getInt(2);
+			
+			Genre g = genres.get(genre_id);
+			Movie m = movies.get(movie_id);
+			
+			g.addMovie(m);
+			m.addGenre(g);
+		}
+		
+		rs.close();
+	}
+	
+	public static Map<Integer, Movie> moviesFromDatabase(Statement select) throws Exception{
+		Map<Integer, Movie> movies = new HashMap<Integer, Movie>();
+		String query = "select * from movies";
 		
 		ResultSet rs = select.executeQuery(query);
 		
 		while(rs.next()){
 			Movie m = new Movie(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5),
-								rs.getString(6), rs.getString(7) );
+					rs.getString(6));
+			movies.put(m.getId(), m);
+		}
+		
+		rs.close();
+		return movies;
+	}
+	
+	public static Map<Integer, Star> starsFromDatabase(Statement select) throws Exception{
+		Map<Integer, Star> stars = new HashMap<Integer, Star>();
+		
+		String query = "select * from stars";
+		
+		ResultSet rs = select.executeQuery(query);
+		
+		while(rs.next()){
+			Star s = new Star(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+			stars.put(s.getId(), s);
+		}
+		
+		rs.close();
+		return stars;
+	}
+	
+	public static Map<Integer, Genre> genresFromDatabase(Statement select) throws Exception{
+		Map<Integer, Genre> genres = new HashMap<Integer, Genre>();
+		
+		String query = "select * from genres";
+		
+		ResultSet rs = select.executeQuery(query);
+		
+		while(rs.next()){
+			Genre g = new Genre(rs.getInt(1), rs.getString(2));
+			genres.put(g.getId(), g);
+		}
+		
+		rs.close();
+		return genres;
+	}
+	
+	public static Set<Movie> beginsWithLetter(char letter, Statement select) throws Exception {
+		Set<Movie> movies = new HashSet<Movie>();
+		//String query = "select movies.* from movies, genres_in_movies, genres where title like '" + letter + "%'"
+		//			   + "and movies.id = genres_in_movies.movie_id and genres_in_movies.genre_id = genres.id";
+		String query = "select * from movies where title like '" + letter + "%'";
+		
+		ResultSet rs = select.executeQuery(query);
+		
+		while(rs.next()){
+			Movie m = new Movie(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5),
+								rs.getString(6));
 			movies.add(m);
 		}
 		
@@ -94,8 +221,7 @@ public class Jonathan {
 		ResultSet rs = select.executeQuery(query);
 		
 		while(rs.next()){
-			Movie m = new Movie(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5),
-								rs.getString(6), rs.getString(7) );
+			Movie m = null;
 			movies.add(m);
 		}
 		
@@ -112,8 +238,7 @@ public class Jonathan {
 		ResultSet rs = select.executeQuery(query);
 		
 		while(rs.next()){
-			Movie m = new Movie(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5),
-								rs.getString(6), genre );
+			Movie m = null;
 			movies.add(m);
 		}
 		
