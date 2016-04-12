@@ -1,5 +1,6 @@
 package objects;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Star {
@@ -25,16 +26,21 @@ public class Star {
 		this.last = last;
 		this.dob = dob;
 		this.photo = photo;
+		this.movies = new HashSet<Movie>();
 	}
 	
-	public Set<Movie> getMovies() {
-		return movies;
+	public void addMovie(Movie m){
+		movies.add(m);
 	}
-
-	public void setMovies(Set<Movie> movies) {
+	
+	public void setMovies(Set<Movie> movies){
 		this.movies = movies;
 	}
 	
+	public Set<Movie> getMovies(){
+		return movies;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -54,7 +60,15 @@ public class Star {
 	@Override
 	public String toString() {
 		return "Star [id=" + id + ", first=" + first + ", last=" + last + ", dob=" + dob + ", photo=" + photo
-				+ ", movies=" + movies + "]";
+				+ ", \n\tmovies=" + movieNames() + "]";
+	}
+	
+	private String movieNames(){
+		String names = "";
+		for(Movie m : movies){
+			names += m.getTitle() + ", ";
+		}
+		return names;
 	}
 
 	@Override
