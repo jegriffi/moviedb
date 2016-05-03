@@ -1,2 +1,10 @@
 STRUCTURE FOR ACTORS
 
+<actors> // wrapper for file
+	<actor>
+		<stagename> First + last </stagename> // actors stagename
+		<familyname> last name </familyname> // last name of actor
+		<firstname> first name </firstname> // first name of actor
+		<dob>YEAR</dob> // date of birth of actor
+	</actor>
+</actors>
