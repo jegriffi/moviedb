@@ -6,6 +6,23 @@
 <!-- Version 63 Updated 20 April 2004 -->
 <actors>
     <!-- A AAAAA  -->
+	<actor>
+        <stagename>Kareem AbdulJabbar</stagename>
+        <dowstart></dowstart>
+        <dowend></dowend>
+        <familyname></familyname>
+        <firstname></firstname>
+        <gender>M</gender>
+        <dob></dob>
+        <dod>1992+</dod>
+        <roletype>basketball player</roletype>
+        <origin>\Am</origin>
+        <picref/>
+        <relationships/>
+        <notes>
+            <refs>![1]</refs>
+        </notes>
+    </actor>
     <actor>
         <stagename>Willie Aames</stagename>
         <dowstart></dowstart>
@@ -112,23 +129,6 @@
         <picref/>
         <relationships/>
         <notes/>
-    </actor>
-    <actor>
-        <stagename>Kareem AbdulJabbar</stagename>
-        <dowstart></dowstart>
-        <dowend></dowend>
-        <familyname></familyname>
-        <firstname></firstname>
-        <gender>M</gender>
-        <dob></dob>
-        <dod>1992+</dod>
-        <roletype>basketball player</roletype>
-        <origin>\Am</origin>
-        <picref/>
-        <relationships/>
-        <notes>
-            <refs>![1]</refs>
-        </notes>
     </actor>
     <actor>
         <stagename>Walter Abel</stagename>

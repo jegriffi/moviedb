@@ -15,6 +15,19 @@ public class Movie {
 	Set<Genre> genres = null;
 	Set<Star> stars = null;
 
+	public Movie(){ 	}
+	
+	public void setDirector(String dir){
+		this.director = dir;
+	}
+	
+	public void setTitle(String title){
+		this.title = title;
+	}
+	
+	public void setYear(int year){
+		this.year = year;
+	}
 	
 	/**
 	 * 
