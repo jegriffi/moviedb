@@ -1,3 +1,4 @@
+use moviedb;
 INSERT INTO movies VALUES(490003, 'Hostage', 2005, 'Florent Emilio Siri', 'http://ia.imdb.com/media/imdb/01/I/13/78/68m.jpg', 'http://images.apple.com/movies/miramax/hostage/hostage-ref.mov');
 INSERT INTO movies VALUES(490008, 'The Sound of Music', 1965, 'Robert Wise', 'http://ia.imdb.com/media/imdb/01/I/66/06/28m.jpg', 'http://videodetective.com/player.asp?PublishedId=275&List=901769&Customerid=97135');
 INSERT INTO movies VALUES(490010, 'Walk in the Clouds', 1995, 'Alfonso Arau', 'http://ia.imdb.com/media/imdb/01/I/62/79/06m.jpg', 'http://videodetective.com/player.asp?PublishedId=5922&List=278378|179312|745846|211636|218940&Customerid=97135');
@@ -3114,3 +3115,8 @@ INSERT INTO sales VALUES(6448, 658002, 788013, '2002/10/20');
 INSERT INTO sales VALUES(6449, 658005, 788010, '2002/10/20');
 INSERT INTO sales VALUES(6450, 658015, 755005, '2002/10/20');
 INSERT INTO sales VALUES(6451, 658016, 693007, '2002/10/20');
+
+
+insert into star_stagename (id, firstname, lastname, stagename) 
+select id, first, last, concat(first, ' ', last)
+from stars;

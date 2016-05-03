@@ -1,0 +1,24 @@
+STRUCTURE FOR Mains
+
+<movies>
+	<directorfilms> // This is the start of director details and films for 1 director
+		<director>
+			<dirname>NAME</dirname> // this is the directors name
+		</director>
+		<films> // wrapper of all the films he/she made
+			<film> // the actual film details
+				<t>TITLE</t>
+				<year>YEAR</year>
+				
+				<dirs>
+					// not even gonna bother we don't have multiple directors 
+				</dirs>
+				
+				<cats> // Categories
+					<cat> Genre #wecare </cat> // category names are abbreviated
+				</cats>
+				
+			</film>
+		</films>
+	</directorfilms>
+</movies>

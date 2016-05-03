@@ -99,18 +99,17 @@ CREATE TABLE `moviedb`.`sales` (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
 
-CREATE TABLE `moviedb`.`shoppingcart` (
-  `cust_id` INT NOT NULL,
-  `movie_id` INT NOT NULL,
-  PRIMARY KEY (`cust_id`, `movie_id`),
-  INDEX `movie_sc_idx` (`movie_id` ASC),
-  CONSTRAINT `cust_sc`
-    FOREIGN KEY (`cust_id`)
-    REFERENCES `moviedb`.`customers` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `movie_sc`
-    FOREIGN KEY (`movie_id`)
-    REFERENCES `moviedb`.`movies` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE);
+CREATE TABLE `moviedb`.`star_stagename` (
+  `id` INT NOT NULL,
+  `firstname` VARCHAR(50) NOT NULL DEFAULT '',
+  `lastname` VARCHAR(50) NOT NULL DEFAULT '',
+  `stagename` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `stagenames`
+    FOREIGN KEY (`id`)
+    REFERENCES `moviedb`.`stars` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+	
+	
