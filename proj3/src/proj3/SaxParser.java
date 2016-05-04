@@ -44,7 +44,10 @@ public class SaxParser {
 		mains.setMovieId(movieId);
 		mains.run();
 		
-		
+		SaxParserCasts casts = new SaxParserCasts();
+		casts.setMovieId(movieId);
+		casts.setStarId(starId);
+		casts.run();
 	}
 	
 	private void cache(){
@@ -88,7 +91,16 @@ public class SaxParser {
 			ResultSet rs = select.executeQuery(query);
 			
 			while(rs.next()){
-				String stagename = rs.getString("first") + " " + rs.getString("last");
+				String first =  rs.getString("first");
+				String last = rs.getString("last");
+				String stagename;
+				
+				if(first.length() > 0){
+					stagename = rs.getString("first") + " " + rs.getString("last");
+				} else {
+					stagename = rs.getString("last");
+				}
+				
 				int id = rs.getInt(1);
 				
 				starId.putIfAbsent(stagename, id);

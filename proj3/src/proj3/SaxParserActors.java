@@ -107,12 +107,10 @@ public class SaxParserActors extends DefaultHandler {
 
 		if(qName.equalsIgnoreCase("actor") && notInDatabase(tempStar)) {
 			addStarToDatabase(tempStar);
+			
 		} else if(qName.equalsIgnoreCase("stagename") && tempVal.length() > 0) {
 			processStageName(tempStar, tempVal);
-		} else if (qName.equalsIgnoreCase("firstname") && tempVal.length() > 0) {
-			tempStar.setFirst(tempVal);
-		}else if (qName.equalsIgnoreCase("familyname") && tempVal.length() > 0) {
-			tempStar.setLast(tempVal);
+			
 		}else if (qName.equalsIgnoreCase("dob") && tempVal.length() > 0 && tempVal.matches("[-+]?\\d*\\.?\\d+")){
 			tempStar.setDob(tempVal + "-1-1");
 		}

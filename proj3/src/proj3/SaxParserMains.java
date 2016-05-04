@@ -22,7 +22,6 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.sql.ResultSet;
 
 import objects.Movie;
-import objects.Star;
 
 public class SaxParserMains extends DefaultHandler{
 	final String XMLfile ="stanford-movies/mains243.xml";
@@ -83,12 +82,16 @@ public class SaxParserMains extends DefaultHandler{
     public void close(){
     	try{
     		genreMovieTable.executeBatch();
+    	} catch(Exception e){
+    		e.printStackTrace();
+    	}
+    	
+    	try{
     		conn.commit();
-    		
     		genreMovieTable.close();
     		conn.close();
     	} catch (Exception e){ 
-    		e.printStackTrace(); 
+    		e.printStackTrace();
     	}
     }
     
@@ -230,7 +233,7 @@ public class SaxParserMains extends DefaultHandler{
   			if(++count % 1000 == 0){
   				System.out.println("Batch");
   	  			genreMovieTable.executeBatch();
-  	  			conn.commit();
+  	  			//conn.commit();
   	  		}
   		} catch (Exception e) {
   			System.err.println("ERROR IN BATCH GENRES");
@@ -253,31 +256,51 @@ public class SaxParserMains extends DefaultHandler{
     }
     
     public static void main(String[] args){
+    	Connection conn = null;
 		try{
 			Class.forName(JDBC_DRIVER).newInstance();
-	    	Connection conn = DriverManager.getConnection("jdbc:mysql:///"+db,user, pass);
+	    	conn = DriverManager.getConnection("jdbc:mysql:///"+db,user, pass);
 	    	conn.setAutoCommit(false);
-	    	Statement select = conn.createStatement();
-	    	String sql = "insert into genres (name) values ('jonathaaaaaannnnn')";
-	    	select.executeUpdate(sql);
-	    	int id = 0;
+    		PreparedStatement ps = conn.prepareStatement("insert into stars(id, first, last) values (?, ?, ?)");
+    		
+    		ps.setInt(1,911);
+    		ps.setString(2, "jonathan");
+    		ps.setString(3, "Nguyen");
+    		ps.addBatch();
+    		
+    		ps.setInt(1,10);
+    		ps.setString(2, "jonathan");
+    		ps.setString(3, "Nguyen");
+    		ps.addBatch();
+    		
+    		ps.setInt(1,11);
+    		ps.setString(2, "jonathan");
+    		ps.setString(3, "Nguyen");
+    		ps.addBatch();
+    		
+    		ps.setInt(1,12);
+    		ps.setString(2, "jonathan");
+    		ps.setString(3, "Nguyen");
+    		ps.addBatch();
+    		
+    		ps.setInt(1,15);
+    		ps.setString(2, "jonathan");
+    		ps.setString(3, "Nguyen");
+    		ps.addBatch();
 	    	
-	    	sql = "select last_insert_id()";
-  			ResultSet rs = select.executeQuery(sql);
-  			
-  			if(rs.next()){
-  				id = rs.getInt(1);
-  			}
-  			
-  			System.out.println(id);
-	    	
-  			conn.commit();
-    		conn.close();
+    		ps.executeBatch();
     		
     		
     	} catch (Exception e) { 
     		e.printStackTrace(); 
     	}
+		
+		
+		try {
+			conn.commit();
+		}  catch (Exception e){
+			e.printStackTrace();
+		}
     }
 
 
