@@ -45,9 +45,18 @@ public class SaxParser {
 		mains.run();
 		
 		SaxParserCasts casts = new SaxParserCasts();
-		casts.setMovieId(movieId);
 		casts.setStarId(starId);
 		casts.run();
+		
+		close();
+	}
+	
+	private void close(){
+		try{
+			conn.close();
+		} catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	private void cache(){
@@ -131,8 +140,6 @@ public class SaxParser {
 			e.printStackTrace();
 		}
 	}
-	
-	
 	
 	public static void main(String[] args) {
 		SaxParser sp = new SaxParser();

@@ -83,7 +83,8 @@ public class SaxParserMains extends DefaultHandler{
     	try{
     		genreMovieTable.executeBatch();
     	} catch(Exception e){
-    		e.printStackTrace();
+    		System.err.println("ERROR IN BATCH GENRES");
+  			System.err.println(e.getMessage());
     	}
     	
     	try{
@@ -139,6 +140,12 @@ public class SaxParserMains extends DefaultHandler{
 
   		if(qName.equalsIgnoreCase("dirname") && tempVal.length() > 0){
   			director = tempVal;
+//  			int index = tempVal.lastIndexOf('.');
+//  			if(index == -1)
+//  				director = tempVal;
+//  			else
+//  				director = tempVal.substring(index + 1);
+  			
   			
   		} else if(qName.equalsIgnoreCase("t")){
   			String title = tempVal.replaceAll("\\\\", "").replaceAll("'", "\\\\'");
@@ -237,7 +244,7 @@ public class SaxParserMains extends DefaultHandler{
   	  		}
   		} catch (Exception e) {
   			System.err.println("ERROR IN BATCH GENRES");
-  			e.printStackTrace();
+  			System.err.println(e.getMessage());
   		}
   	}
     
@@ -256,6 +263,12 @@ public class SaxParserMains extends DefaultHandler{
     }
     
     public static void main(String[] args){
+    	String x = "Les Mis\\'erables";
+    	System.out.println(x);
+    	
+    	System.out.println(x.replaceAll("\\\\", "").replaceAll("'", "\\\\'"));
+    	
+    	/*
     	Connection conn = null;
 		try{
 			Class.forName(JDBC_DRIVER).newInstance();
@@ -301,6 +314,7 @@ public class SaxParserMains extends DefaultHandler{
 		}  catch (Exception e){
 			e.printStackTrace();
 		}
+		*/
     }
 
 
