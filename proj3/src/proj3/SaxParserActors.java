@@ -28,10 +28,10 @@ public class SaxParserActors extends DefaultHandler {
 	final String XMLfile ="source_XML_parsing/actors63.xml";
 	
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql:///moviedb"; 
-    static  String db = "moviedb";
-    static  String user = "root";
-    static  String pass = "futurama5";
+    static final String DB_URL = "jdbc:mysql:///moviedb_project3_grading"; 
+    static  String db = "moviedb_project3_grading";
+    static  String user = "classta";
+    static  String pass = "classta";
     Connection conn;
     Statement select;
     PreparedStatement ps;

@@ -48,10 +48,10 @@ public class SaxParserMains extends DefaultHandler{
 		    }});
 
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql:///moviedb"; 
-    static  String db = "moviedb";
-    static  String user = "root";
-    static  String pass = "futurama5";
+    static final String DB_URL = "jdbc:mysql:///moviedb_project3_grading"; 
+    static  String db = "moviedb_project3_grading";
+    static  String user = "classta";
+    static  String pass = "classta";
     Connection conn;
     Statement select;
     PreparedStatement moviesTable;
@@ -262,59 +262,25 @@ public class SaxParserMains extends DefaultHandler{
     	close();
     }
     
-    public static void main(String[] args){
-    	String x = "Les Mis\\'erables";
-    	System.out.println(x);
+    public static void main(String[] args){   	
     	
-    	System.out.println(x.replaceAll("\\\\", "").replaceAll("'", "\\\\'"));
-    	
-    	/*
     	Connection conn = null;
 		try{
 			Class.forName(JDBC_DRIVER).newInstance();
 	    	conn = DriverManager.getConnection("jdbc:mysql:///"+db,user, pass);
-	    	conn.setAutoCommit(false);
-    		PreparedStatement ps = conn.prepareStatement("insert into stars(id, first, last) values (?, ?, ?)");
-    		
-    		ps.setInt(1,911);
-    		ps.setString(2, "jonathan");
-    		ps.setString(3, "Nguyen");
-    		ps.addBatch();
-    		
-    		ps.setInt(1,10);
-    		ps.setString(2, "jonathan");
-    		ps.setString(3, "Nguyen");
-    		ps.addBatch();
-    		
-    		ps.setInt(1,11);
-    		ps.setString(2, "jonathan");
-    		ps.setString(3, "Nguyen");
-    		ps.addBatch();
-    		
-    		ps.setInt(1,12);
-    		ps.setString(2, "jonathan");
-    		ps.setString(3, "Nguyen");
-    		ps.addBatch();
-    		
-    		ps.setInt(1,15);
-    		ps.setString(2, "jonathan");
-    		ps.setString(3, "Nguyen");
-    		ps.addBatch();
+	    	Statement select = conn.createStatement();
 	    	
-    		ps.executeBatch();
+	    	String sql = "call add_movie('zooo', 'jonathan', 2016,'jon', 'nguyen', 'mygenre');";
+	    	
+	    	select.execute(sql);
+	    	System.out.println(sql);
     		
-    		
+    		select.close();
+    		conn.close();
     	} catch (Exception e) { 
     		e.printStackTrace(); 
     	}
 		
-		
-		try {
-			conn.commit();
-		}  catch (Exception e){
-			e.printStackTrace();
-		}
-		*/
     }
 
 
