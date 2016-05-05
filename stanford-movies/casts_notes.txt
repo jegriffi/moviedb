@@ -7,6 +7,7 @@ STRUCTURE FOR CASTS
 		<filmc> // One particular film
 			<m> // entry for cast member
 				<t>Movie Title</t> // Movie title 
+				<a> Actor Name </a>  // Name of actor
 			</m>
 		</filmc>
 	</dirfilms>
