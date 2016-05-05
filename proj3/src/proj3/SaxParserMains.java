@@ -272,6 +272,8 @@ public class SaxParserMains extends DefaultHandler{
 	    	
 	    	String sql = "call add_movie('zooo', 'jonathan', 2016,'jon', 'nguyen', 'mygenre');";
 	    	
+	    	
+	    	
 	    	select.execute(sql);
 	    	System.out.println(sql);
     		
