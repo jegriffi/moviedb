@@ -1,0 +1,13 @@
+STRUCTURE FOR CASTS
+
+<casts> // File Wrapper
+	<dirfilms>
+		<is>Director Name</is> // standard name for director
+		
+		<filmc> // One particular film
+			<m> // entry for cast member
+				<t>Movie Title</t> // Movie title 
+			</m>
+		</filmc>
+	</dirfilms>
+</casts>
