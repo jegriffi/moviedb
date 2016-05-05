@@ -25,7 +25,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import objects.Star;
 
 public class SaxParserActors extends DefaultHandler {
-	final String XMLfile ="stanford-movies/actors63.xml";
+	final String XMLfile ="source_XML_parsing/actors63.xml";
 	
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql:///moviedb"; 

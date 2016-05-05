@@ -25,7 +25,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
 public class SaxParserCasts extends DefaultHandler {
-	final String XMLfile ="stanford-movies/casts124.xml";
+	final String XMLfile ="source_XML_parsing/casts124.xml";
 
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql:///moviedb"; 

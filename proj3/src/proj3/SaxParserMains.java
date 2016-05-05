@@ -24,7 +24,7 @@ import java.sql.ResultSet;
 import objects.Movie;
 
 public class SaxParserMains extends DefaultHandler{
-	final String XMLfile ="stanford-movies/mains243.xml";
+	final String XMLfile ="source_XML_parsing/mains243.xml";
 	private static final Map<String, String> genreCodeNames = Collections.unmodifiableMap(
 		    new HashMap<String, String>() {{
 		        put("Susp", "thriller");
