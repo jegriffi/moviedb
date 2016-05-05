@@ -11,10 +11,10 @@ import java.util.Scanner;
 
 public class SaxParser {
 	public final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	public final String DB_URL = "jdbc:mysql:///moviedb"; 
-	public String db = "moviedb";
-    public String user = "root";
-    public String pass = "futurama5";
+    static final String DB_URL = "jdbc:mysql:///moviedb_project3_grading"; 
+    static  String db = "moviedb_project3_grading";
+    static  String user = "classta";
+    static  String pass = "classta";
     Connection conn;
 	
     public Map<String, Integer> movieId = new HashMap<String, Integer>();
