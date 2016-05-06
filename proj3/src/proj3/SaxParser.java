@@ -34,17 +34,20 @@ public class SaxParser {
 	public void run(){
 		cache();
 		
+		System.out.println("Starting actors");
 		SaxParserActors actors = new SaxParserActors();
 		actors.setStarId(starId);
 		actors.run();
 		
 		cacheStars();
 		
+		System.out.println("Starting Mains");
 		SaxParserMains mains = new SaxParserMains();
 		mains.setGenreId(genreId);
 		mains.setMovieId(movieId);
 		mains.run();
 		
+		System.out.println("Starting Casts");
 		SaxParserCasts casts = new SaxParserCasts();
 		casts.setStarId(starId);
 		casts.run();
@@ -130,10 +133,10 @@ public class SaxParser {
 			ResultSet rs = select.executeQuery(query);
 			
 			while(rs.next()){
-				String title = rs.getString("title");
+				String title = rs.getString("title").replaceAll("\\\\", "").replaceAll("'", "\\\\'");
 				int id = rs.getInt(1);
 				
-				movieId.putIfAbsent(title, id);
+				movieId.putIfAbsent(title.toLowerCase(), id);
 			}
 			
 			rs.close();

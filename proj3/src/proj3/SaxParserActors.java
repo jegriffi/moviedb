@@ -25,14 +25,14 @@ import org.xml.sax.helpers.DefaultHandler;
 import objects.Star;
 
 public class SaxParserActors extends DefaultHandler {
-	final String XMLfile ="source_XML_parsing/actors63.xml";
+	final String XMLfile ="actors63.xml";
 	
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql:///moviedb_project3_grading"; 
     
-    static  String db = "moviedb_project3_grading";
-    static  String user = "classta";
-    static  String pass = "classta";
+    String db = SaxParser.db;
+    String user = SaxParser.user;
+    String pass = SaxParser.pass;
     
     Connection conn;
     Statement select;
@@ -155,8 +155,14 @@ public class SaxParserActors extends DefaultHandler {
   	}
   	
   	public boolean notInDatabase(Star s){
-  		String stagename = s.getFirst() + ' ' + s.getLast();
-  		return !starId.containsKey(stagename);
+  		String stagename;
+  		if(s.getFirst().length() > 0){
+			stagename = s.getFirst() + ' ' + s.getLast();
+		} else {
+			stagename = s.getLast();
+		}
+  		
+   		return !starId.containsKey(stagename);
   	}
   	
   	public void setStarId(Map<String, Integer> starId){

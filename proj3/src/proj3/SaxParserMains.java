@@ -24,7 +24,7 @@ import java.sql.ResultSet;
 import objects.Movie;
 
 public class SaxParserMains extends DefaultHandler{
-	final String XMLfile ="source_XML_parsing/mains243.xml";
+	final String XMLfile ="mains243.xml";
 	private static final Map<String, String> genreCodeNames = Collections.unmodifiableMap(
 		    new HashMap<String, String>() {{
 		        put("Susp", "thriller");
@@ -49,9 +49,11 @@ public class SaxParserMains extends DefaultHandler{
 
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql:///moviedb_project3_grading"; 
-    static  String db = "moviedb_project3_grading";
-    static  String user = "classta";
-    static  String pass = "classta";
+    
+    static String db = SaxParser.db;
+    static String user = SaxParser.user;
+    static String pass = SaxParser.pass;
+    
     Connection conn;
     Statement select;
     PreparedStatement moviesTable;
@@ -64,6 +66,7 @@ public class SaxParserMains extends DefaultHandler{
     private String tempVal;
     private Movie tempMovie;
     List<Integer> genres;
+    boolean insideDirector;
     
     int count = 0;
 	
@@ -122,13 +125,15 @@ public class SaxParserMains extends DefaultHandler{
   	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
   		//reset
   		tempVal = "";
-  		if(qName.equalsIgnoreCase("director") || qName.equalsIgnoreCase("dirname")) {
+  		if(qName.equalsIgnoreCase("dirname") && insideDirector) {
   			director = "";
   		} else if(qName.equalsIgnoreCase("film")){
   			tempMovie = new Movie();
   			tempMovie.setDirector(director);
   		} else if (qName.equalsIgnoreCase("cats")){
   			genres = new ArrayList<Integer>();
+  		} else if(qName.equalsIgnoreCase("director")){
+  			insideDirector = true;
   		}
   	}
     
@@ -138,15 +143,9 @@ public class SaxParserMains extends DefaultHandler{
   	
   	public void endElement(String uri, String localName, String qName) throws SAXException {
 
-  		if(qName.equalsIgnoreCase("dirname") && tempVal.length() > 0){
+  		if(qName.equalsIgnoreCase("dirname") && tempVal.length() > 0 && insideDirector){
   			director = tempVal;
-//  			int index = tempVal.lastIndexOf('.');
-//  			if(index == -1)
-//  				director = tempVal;
-//  			else
-//  				director = tempVal.substring(index + 1);
-  			
-  			
+  				
   		} else if(qName.equalsIgnoreCase("t")){
   			String title = tempVal.replaceAll("\\\\", "").replaceAll("'", "\\\\'");
   			tempMovie.setTitle(title);
@@ -159,15 +158,47 @@ public class SaxParserMains extends DefaultHandler{
   		} else if (qName.equalsIgnoreCase("cat")){
   			processGenre();
   			
-  		} else if(qName.equalsIgnoreCase("film")) {
+  		} else if(qName.equalsIgnoreCase("film") && notInDatabase()) {
   			addMovieToDatabase();
   			
+  		} else if(qName.equalsIgnoreCase("director")){
+  			insideDirector = false;
   		}
 		
 	}
   	
+  	private boolean notInDatabase(){
+  		if(!movieId.containsKey(tempMovie.getTitle().toLowerCase()))
+  				return true;
+  		
+		String sql = "select * from movies where title = '" + tempMovie.getTitle() + "' and director = '" + tempMovie.getDirector() + "'";
+
+  		
+  		try{
+  			Statement select = conn.createStatement();
+  			ResultSet rs = select.executeQuery(sql);
+  			
+  			if(rs.next()){
+  				return false;
+  			}
+  			
+  			//System.err.println(sql);
+  			
+  			rs.close();
+  			select.close();
+  		} catch (Exception e){
+  			System.out.println(e.getMessage());
+  		}
+  		
+  		return true;
+  	}
+  	
   	private void processGenre(){
   		String genre = genreCodeNames.get(tempVal);
+  		if(genre == null)
+  			return;
+  		
+  		genre = genre.toLowerCase();
 		Integer genreIdNum = genreId.get(genre);
 		if(genreIdNum == null){
 			genreIdNum = newGenre(genre);
@@ -181,6 +212,9 @@ public class SaxParserMains extends DefaultHandler{
   		try{
   			Statement select = conn.createStatement();
   			String sql = "insert into genres (name) values ('" + genre + "')";
+  			if(genre.equals("null")){
+  				System.out.println(genre);
+  			}
   			select.executeUpdate(sql);
   			//conn.commit();
   			
@@ -217,7 +251,7 @@ public class SaxParserMains extends DefaultHandler{
   				id = rs.getInt(1);
   			}
   			
-  			movieId.put(tempMovie.getTitle(), id);
+  			movieId.put(tempMovie.getTitle().toLowerCase(), id);
   			
   			batchGenres(id);
   			

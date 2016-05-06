@@ -25,13 +25,13 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
 public class SaxParserCasts extends DefaultHandler {
-	final String XMLfile ="source_XML_parsing/casts124.xml";
+	final String XMLfile ="casts124.xml";
 
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql:///moviedb_project3_grading"; 
-    static  String db = "moviedb_project3_grading";
-    static  String user = "classta";
-    static  String pass = "classta";
+    String db = SaxParser.db;
+    String user = SaxParser.user;
+    String pass = SaxParser.pass;
     
     Connection conn;
     Statement select;
