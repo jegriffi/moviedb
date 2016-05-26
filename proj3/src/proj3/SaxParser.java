@@ -14,7 +14,7 @@ public class SaxParser {
     static final String DB_URL = "jdbc:mysql:///moviedb";     
     static  String db = "moviedb";
     static  String user = "root";
-    static  String pass = "";
+    static  String pass = "futurama5";
     
     Connection conn;
 	
