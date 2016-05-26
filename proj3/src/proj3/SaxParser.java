@@ -11,10 +11,10 @@ import java.util.Scanner;
 
 public class SaxParser {
 	public final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql:///moviedb_project3_grading";     
-    static  String db = "moviedb_project3_grading";
-    static  String user = "classta";
-    static  String pass = "classta";
+    static final String DB_URL = "jdbc:mysql:///moviedb";     
+    static  String db = "moviedb";
+    static  String user = "root";
+    static  String pass = "";
     
     Connection conn;
 	

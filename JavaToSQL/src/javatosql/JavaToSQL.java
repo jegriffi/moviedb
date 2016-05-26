@@ -16,7 +16,7 @@ public class JavaToSQL {
     static final String DB_URL = "jdbc:mysql:///moviedb"; 
     static  String db = "moviedb";
     static  String user = "root";
-    static  String pass = "pass";   
+    static  String pass = "futurama5";   
     
     public static void main(String[] args) throws Exception {
         programFlow();
